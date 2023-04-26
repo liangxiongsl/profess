@@ -1,56 +1,70 @@
 site_name: Professional course
 nav: 
     - 计算机组成原理:
-        - computer organization&architecture/index.md
-        - computer organization&architecture/COA概述.md
-        - computer organization&architecture/Basic CO&&Design.md
-        - computer organization&architecture/Computer Instructions.md
-        - computer organization&architecture/Digital Logic Circuits.md
-        - computer organization&architecture/Map Simplification.md
-        - computer organization&architecture/Combinational Circuits.md
-        - computer organization&architecture/Flip - Flops.md
-        - computer organization&architecture/Digital Components.md
-        - computer organization&architecture/Register Transfer.md
-        - computer organization&architecture/Micro-Operations.md
-        - computer organization&architecture/Memory Organization.md
-        - computer organization&architecture/Pipeline.md
+        - computer organization&architecture/1.COA概述.md
+        - computer organization&architecture/2.Basic CO&&Design.md
+        - computer organization&architecture/3.Computer Instructions.md
+        - computer organization&architecture/4.Digital Logic Circuits.md
+        - computer organization&architecture/5.Combinational Circuits.md
+        - computer organization&architecture/6.Flip - Flops.md
+        - computer organization&architecture/7.Digital Components.md
+        - computer organization&architecture/8.Register Transfer language.md
+        - computer organization&architecture/9.Micro-Operations.md
+        - computer organization&architecture/10.Memory Organization.md
+        - computer organization&architecture/11.Pipeline.md
         - computer organization&architecture/Misc.md
     - 计算机网络:
-        - computer network/index.md
-        - computer network/概述.md
-        - computer network/Models.md
-        - computer network/Physical Layer.md
-        - computer network/Data Link layer.md
-        - computer network/Network Layer.md
-        - computer network/Routing Algorithm.md
-        - computer network/Transport Layer.md
-        - computer network/Application Layer.md
-        - computer network/Application Protocols.md
-        - computer network/Network Security.md
+        - computer network/1.概述.md
+        - computer network/2.Models.md
+        - computer network/3.Physical Layer.md
+        - computer network/4.Data Link layer.md
+        - computer network/5.Network Layer.md
+        - computer network/6.Routing Algorithm.md
+        - computer network/7.Transport Layer.md
+        - computer network/8.Application Layer.md
+        - computer network/9.Application Protocols.md
+        - computer network/10.Network Security.md
         - computer network/Misc&MCQ.md
     - 操作系统:
-        - operating system/index.md
-        - operating system/概述.md
-        - operating system/Process Management.md
-        - operating system/Synchronization.md
-        - operating system/Deadlocks.md
-        - operating system/Memory Management.md
-        - operating system/File Management.md
+        - operating system/1.概述.md
+        - operating system/2.Process Management.md
+        - operating system/3.Synchronization.md
+        - operating system/4.Deadlocks.md
+        - operating system/5.Memory Management.md
+        - operating system/6.File Management.md
         - operating system/Misc&MCQ.md
     - 数据结构:
-        - data structure/index.md
-        - data structure/概述.md
-        - data structure/Array.md
-        - data structure/Linked List.md
-        - data structure/Stack.md
-        - data structure/Queue.md
-        - data structure/Tree.md
-        - data structure/Graph.md
-        - data structure/Searching.md
-        - data structure/Sorting.md
-        - data structure/Differences.md
+        - data structure/1.概述.md
+        - data structure/2.Array.md
+        - data structure/3.Linked List.md
+        - data structure/4.Stack.md
+        - data structure/5.Queue.md
+        - data structure/6.Tree.md
+        - data structure/7.Graph.md
+        - data structure/8.Searching.md
+        - data structure/9.Sorting.md
+        - data structure/10.Differences.md
         - data structure/Misc&MCQ.md
-        
+    - 刻意练习:
+        - 刻意练习\0.序.md
+        - 刻意练习\1.有目的的练习.md
+        - 刻意练习\2.大脑的适应能力.md
+        - 刻意练习\3.心里表征.md
+        - 刻意练习\4.黄金标准.md
+        - 刻意练习\5.在工作中运用刻意练习原则.md
+        - 刻意练习\6.在生活中运用刻意练习原则.md
+        - 刻意练习\7.成为杰出人物的路线图.md
+        - 刻意练习\8.怎样解释天生才华.md
+        - 刻意练习\9.用刻意练习创造全新世界.md
+    - 工程:
+        - 工程/0.整体介绍.md
+        - 工程/1.概述.md
+        - 工程/2.数据绑定.md
+        - 工程/3.过渡&动画.md
+        - 工程/data warehouse.md
+        - 工程/sql.md
+        - 工程/software engineering.md
+        - 工程/github.md
 extra_css:
     - res/extra.css
 extra_javascript:
@@ -158,11 +172,23 @@ theme:
 
 extra:
     alternate:
-        - name: English
-          link: /en/ 
+        - name: 计算机组成原理
+          link: https://www.javatpoint.com/computer-organization-and-architecture-tutorial 
           lang: en
-        - name: 中文
-          link: /zh/
+        - name: 计算机网络
+          link: https://www.javatpoint.com/computer-network-tutorial
+          lang: zh
+        - name: vue.js官网
+          link: https://vuejs.org/ 
+          lang: en
+        - name: vue.js游乐场
+          link: https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==
+          lang: zh
+        - name: vue.js官方教程
+          link: https://vuejs.org/guide/quick-start.html#try-vue-online
+          lang: zh
+        - name: vue.js官方中文教程
+          link: https://cn.vuejs.org/tutorial/#step-1
           lang: zh
 
     homepage: /
