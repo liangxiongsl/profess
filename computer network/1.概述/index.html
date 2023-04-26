@@ -1,0 +1,1481 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../computer%20organization%26architecture/Misc/" rel="prev"/>
+<link href="../2.Models/" rel="next"/>
+<link href="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>1.概述 - Professional course</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Professional course" class="md-header__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Professional course
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              1.概述
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial" hreflang="en">
+                    计算机组成原理
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-network-tutorial" hreflang="zh">
+                    计算机网络
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/" hreflang="en">
+                    vue.js官网
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==" hreflang="zh">
+                    vue.js游乐场
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/guide/quick-start.html#try-vue-online" hreflang="zh">
+                    vue.js官方教程
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://cn.vuejs.org/tutorial/#step-1" hreflang="zh">
+                    vue.js官方中文教程
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../computer%20organization%26architecture/1.COA%E6%A6%82%E8%BF%B0/">
+        计算机组成原理
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        计算机网络
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        操作系统
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        数据结构
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        刻意练习
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%B7%A5%E7%A8%8B/0.%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/">
+        工程
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Professional course" class="md-nav__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+    Professional course
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          计算机组成原理
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          计算机组成原理
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/1.COA%E6%A6%82%E8%BF%B0/">
+        1.COA概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/2.Basic%20CO%26%26Design/">
+        2.Basic CO&amp;&amp;Design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/3.Computer%20Instructions/">
+        3.Computer Instructions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/4.Digital%20Logic%20Circuits/">
+        4.Digital Logic Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/5.Combinational%20Circuits/">
+        5.Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/6.Flip%20-%20Flops/">
+        6.Flip   Flops
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/7.Digital%20Components/">
+        7.Digital Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/8.Register%20Transfer%20language/">
+        8.Register Transfer language
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/9.Micro-Operations/">
+        9.Micro Operations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/10.Memory%20Organization/">
+        10.Memory Organization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/11.Pipeline/">
+        11.Pipeline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/Misc/">
+        Misc
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          计算机网络
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          1.概述
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        1.概述
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.总体上认识计算机网络
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2features">
+    2.features 特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3architecture">
+    3.architecture 体系结构
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4component">
+    4.component 组件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.计算机网络类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6topologies">
+    6.Topologies 拓扑
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7transmission-modes">
+    7.Transmission Modes 传输模式
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.Models/">
+        2.Models
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.Physical%20Layer/">
+        3.Physical Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../4.Data%20Link%20layer/">
+        4.Data Link layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.Network%20Layer/">
+        5.Network Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6.Routing%20Algorithm/">
+        6.Routing Algorithm
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7.Transport%20Layer/">
+        7.Transport Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8.Application%20Layer/">
+        8.Application Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9.Application%20Protocols/">
+        9.Application Protocols
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10.Network%20Security/">
+        10.Network Security
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          操作系统
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/2.Process%20Management/">
+        2.Process Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/3.Synchronization/">
+        3.Synchronization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/4.Deadlocks/">
+        4.Deadlocks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/5.Memory%20Management/">
+        5.Memory Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/6.File%20Management/">
+        6.File Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/2.Array/">
+        2.Array
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/3.Linked%20List/">
+        3.Linked List
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/4.Stack/">
+        4.Stack
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/5.Queue/">
+        5.Queue
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/6.Tree/">
+        6.Tree
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/7.Graph/">
+        7.Graph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/8.Searching/">
+        8.Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/9.Sorting/">
+        9.Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/10.Differences/">
+        10.Differences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          刻意练习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          刻意练习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        0.序
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/1.%E6%9C%89%E7%9B%AE%E7%9A%84%E7%9A%84%E7%BB%83%E4%B9%A0/">
+        1.有目的的练习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/2.%E5%A4%A7%E8%84%91%E7%9A%84%E9%80%82%E5%BA%94%E8%83%BD%E5%8A%9B/">
+        2.大脑的适应能力
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/3.%E5%BF%83%E9%87%8C%E8%A1%A8%E5%BE%81/">
+        3.心里表征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/4.%E9%BB%84%E9%87%91%E6%A0%87%E5%87%86/">
+        4.黄金标准
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/5.%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        5.在工作中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/6.%E5%9C%A8%E7%94%9F%E6%B4%BB%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        6.在生活中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/7.%E6%88%90%E4%B8%BA%E6%9D%B0%E5%87%BA%E4%BA%BA%E7%89%A9%E7%9A%84%E8%B7%AF%E7%BA%BF%E5%9B%BE/">
+        7.成为杰出人物的路线图
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/8.%E6%80%8E%E6%A0%B7%E8%A7%A3%E9%87%8A%E5%A4%A9%E7%94%9F%E6%89%8D%E5%8D%8E/">
+        8.怎样解释天生才华
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/9.%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%88%9B%E9%80%A0%E5%85%A8%E6%96%B0%E4%B8%96%E7%95%8C/">
+        9.用刻意练习创造全新世界
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          工程
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/0.%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/">
+        0.整体介绍
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/2.%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/">
+        2.数据绑定
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/3.%E8%BF%87%E6%B8%A1%26%E5%8A%A8%E7%94%BB/">
+        3.过渡&amp;动画
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/data%20warehouse/">
+        Data warehouse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/sql/">
+        Sql
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/software%20engineering/">
+        Software engineering
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/github/">
+        Github
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.总体上认识计算机网络
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2features">
+    2.features 特征
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3architecture">
+    3.architecture 体系结构
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4component">
+    4.component 组件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.计算机网络类型
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6topologies">
+    6.Topologies 拓扑
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7transmission-modes">
+    7.Transmission Modes 传输模式
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>1.概述</h1>
+<p>该教程提供 数据通信与网络（Data Communication &amp; Networks，DCN）</p>
+<p>我们将介绍 introduction, features, types of computer network, architecture, hardware, software, internet, intranet, website, LAN, WAN 等</p>
+<div class="admonition note">
+<p class="admonition-title">何为计算机网络？</p>
+<ul>
+<li>计算机网络是通过链接(link)连接的一组设备，节点(node)可以是计算机、打印机 或 任何其他能够发送 或 接收数据的设备，连接节点的链路(link)称为 communication channels 信道</li>
+<li>计算机网络使用分布式处理，其中任务在几台计算机之间分配；反之，一台计算机处理整个任务，每台单独的计算机处理一个子集</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">分布式处理的优点</p>
+<ol>
+<li><strong>安全</strong>：它提供了用户可以与整个系统进行的有限交互；例如，银行允许用户通过ATM访问自己的帐户，而不允许用户访问银行的整个数据库</li>
+<li><strong>更快地解决问题</strong>：多台计算机可以比一台机器单独工作更快地解决问题</li>
+<li>通过冗余实现安全性：多台计算机同时运行同一程序可以通过冗余提供安全性。例如，如果四台计算机运行同一程序，并且任何计算机出现硬件错误，则其他计算机可以覆盖它</li>
+</ol>
+</div>
+<h3 id="1">1.总体上认识计算机网络</h3>
+<div class="admonition note">
+<p class="admonition-title">何为计算机网络？</p>
+<ul>
+<li>计算机网络通过 <code>wires</code>(电线)，<code>optical fibres</code>(光导纤维)，<code>optical links</code>(光链路) 相互连接的一组计算机，以便各种设备可以通过 network 相互交互</li>
+<li>其目的是在各种设备之间共享资源</li>
+<li>从计算机网络技术的情况下，计算机网络类型从简单到复杂不等</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">计算机网络的组成部分</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/components-of-computer-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/components-of-computer-network.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">计算机网络的主要组成部分</p>
+<ol>
+<li>
+<p><code>NIC</code>(<del class="critic">National</del><ins class="critic">Network</ins> interface card，网卡)</p>
+<ul>
+<li>NIC 是帮助计算机与其他设备通信的设备</li>
+<li>NIC 包含硬件地址(hardware addresses)，数据链路层(data-link layer) 使用此地址来标识网络上的系统，以便将数据传输到正确的目的地</li>
+<li>NIC 有两种类型：<ul>
+<li>Wireless NIC(无线网卡)：所有现代笔记本电脑都使用无线网卡；在无线 NIC 中，使用采用 无线电波技术(radio wave technology) 的天线(antenna)进行连接</li>
+<li>Wired NIC(有线网卡)：电缆(Cables) 使用有线 NIC 通过介质传输数据</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p><code>Hub</code>(集线器)</p>
+<ul>
+<li>hub 集线器是将网络连接拆分为多个设备的中央设备</li>
+<li>当计算机向另一台计算机请求信息时，它将请求发送到 hub</li>
+<li>Hub 将此请求分发给所有互连的计算机</li>
+</ul>
+</li>
+<li><code>Switches</code>(交换机)<ul>
+<li>Switch 交换机是一种网络设备，它通过网络对所有设备进行分组，以将数据传输到另一台设备</li>
+<li>Switch 比 hub 更好，因为它不通过网络广播消息，即它将消息发送到它所属的设备</li>
+<li>因此，我们可以说交换机将消息直接从 source(源) 发送到 destination(目标)</li>
+</ul>
+</li>
+<li>
+<p><code>Cables</code> &amp; <code>connectors</code>(电缆 和 连接器)</p>
+<p>电缆是传输通信信号的传输介质，有三种类型：</p>
+<ol>
+<li><code>Twisted pair cable</code>(双绞线电缆)：它是一种高速电缆，可通过 1Gbps 或 更高的速度传输数据</li>
+<li><code>Coaxial cable</code>(同轴电缆)：同轴电缆类似于电视安装电缆；同轴电缆 比 双绞线电缆 贵，但它提供了高数据传输速度</li>
+<li><code>Fibre optic cable</code>(光纤电缆)：光纤电缆是一种使用光束传输数据的高速电缆；比其他电缆都要昂贵，但是提供了更高的数据传输速度</li>
+</ol>
+</li>
+<li>
+<p><code>Router</code>(路由器)</p>
+<ul>
+<li>将局域网连接到互联网的设备</li>
+<li>主要用于连接不同的网络 或 将互联网(internet)连接到多台计算机</li>
+</ul>
+</li>
+<li><code>modem</code>(调制解调器)<ul>
+<li>modem 通过现有电话线将计算机连接到互联网</li>
+<li>modem 未与计算机主板集成</li>
+<li>modem 是主板上 <abbr title="program counter，程序计数器，12位，用于保存当前执行指令后从内存中读取的下一条指令的地址">PC</abbr> 插槽上的一个独立部件</li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">计算机网络的 用途</p>
+<ol>
+<li>Resource sharing(资源共享)：在网络上的用户之间共享资源（如程序、打印机和数据），而无需知晓资源和用户的物理位置</li>
+<li>Server-Client model(服务器-客户端模型)：计算机网络用于服务器-客户端模型<ul>
+<li>服务器是用于存储信息并由系统管理员维护的中央计算机</li>
+<li>客户端是用于远程访问存储在服务器中的信息的计算机</li>
+</ul>
+</li>
+<li>Communication medium(通信介质)：计算机网络充当用户之间的通信媒介；例如，一家公司包含多台计算机，具有员工用于日常通信的电子邮件系统</li>
+<li>E-commerce(电子商务)：计算机网络在企业中也很重要；我们可以通过互联网开展业务，例如：amazon.com 通过互联网开展业务，即他们通过互联网开展业务</li>
+</ol>
+</div>
+<h3 id="2features">2.features 特征</h3>
+<div class="admonition 计算机网络的特征">
+<p class="admonition-title">计算机网络的特征</p>
+<ul>
+<li>Communication speed(通信速度)<ul>
+<li>网络使我们能够以快速有效的方式通过网络进行通信</li>
+</ul>
+</li>
+<li>File sharing(文件共享)<ul>
+<li>文件共享是计算机网络的主要优势之一</li>
+</ul>
+</li>
+<li>Back up &amp; Roll back(备份 &amp; 回滚)<ul>
+<li>由于文件存储在位于中心位置的主服务器中，因此，很容易从主服务器进行备份</li>
+</ul>
+</li>
+<li>Hardware &amp; Software sharing(硬件&amp;软件共享)<ul>
+<li>我们可以在主服务器上安装应用程序，因此，用户可以集中访问应用程序，因此，我们不需要在每台计算机上安装该软件</li>
+<li>同样，硬件也可以共享</li>
+</ul>
+</li>
+<li>Security(安全)<ul>
+<li>网络通过确保用户有权访问某些文件和应用程序来实现安全性</li>
+</ul>
+</li>
+<li>Scalability(可扩展性)<ul>
+<li>这意味着我们可以在网络上添加新组件</li>
+<li>网络必须是可扩展的，以便我们可以通过添加新设备来扩展网络</li>
+<li>但是，它降低了连接速度，并且传输速度的数据也降低了，这增加了发生错误的机会；此问题可以通过使用 路由 或 交换设备 来克服</li>
+</ul>
+</li>
+<li>Reliability(可靠性)<ul>
+<li>计算机网络可以在发生任何硬件故障时使用替代源进行数据通信</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="3architecture">3.architecture 体系结构</h3>
+<p>computer network architecture 被定义为数据传输的软件，硬件，协议 和 介质 的 物理 和 逻辑 设计；简单地说，我们可以讨论计算机如何被组织，如何将任务分配给计算机</p>
+<div class="admonition note">
+<p class="admonition-title">两种计算机网络体系结构</p>
+<ul>
+<li><code>peer-to-peer network</code>(点对点网络)</li>
+<li><code>Client/Server network</code>(客户端/服务器网络)</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">peer-to-peer network</p>
+<ul>
+<li>特点：<ul>
+<li>将所有计算机都以相同的权限和处理数据的责任链接在一起</li>
+<li>对于小型环境（通常最多 10 台计算机）非常有用</li>
+<li>没有专用服务器</li>
+<li>为每台计算机分配了用于共享资源的特殊权限，但如果具有资源的计算机关闭，这可能会导致问题</li>
+</ul>
+</li>
+<li>优势：<ul>
+<li>成本较低，因为它不包含任何专用服务器</li>
+<li>如果一台计算机停止工作，但其他计算机也不会停止工作</li>
+<li>它易于设置和维护，因为每台计算机都自行管理</li>
+</ul>
+</li>
+<li>劣势：<ul>
+<li>不包含集中式系统。因此，它无法备份数据，因为数据在不同位置是不同的</li>
+<li>有安全问题，因为设备是自行管理的</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Client/Server network</p>
+<ul>
+<li>
+<ul>
+<li>为最终用户(即 客户端)设计的网络模型，用于访问诸如歌曲、视频等的资源</li>
+<li>中央计算机 称为 <strong>服务器</strong>，而其他计算机称为 <strong>客户端</strong></li>
+<li>服务器执行所有主要操作，例如安全和网络管理</li>
+<li>服务器负责管理所有资源，例如文件、目录、打印机等</li>
+<li>所有客户端都通过服务器相互通信。例如，如果 client1 想要向客户端 2 发送一些数据，则它首先将请求发送到服务器以获取权限。服务器将响应发送到客户端 1 以启动其与客户端 2 的通信</li>
+</ul>
+<p>特点</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/client-server-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/client-server-network.png"/></a></p>
+</li>
+<li>
+<p>优点：</p>
+<ul>
+<li>包含集中式系统；因此，我们可以轻松备份数据</li>
+<li>具有专用服务器，可提高整个系统的整体性能</li>
+<li>安全性更好，因为单个服务器管理共享资源</li>
+<li>提高了共享资源的速度</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>客户端/服务器网络很昂贵，因为它需要具有大内存的服务器</li>
+<li>服务器具有网络操作系统（NOS）来向客户端提供资源，但NOS的成本非常高</li>
+<li>它需要专门的网络管理员来管理所有资源</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="4component">4.component 组件</h3>
+<p>一些重要的网络组件有： <code>NIC</code>，<code>Switch</code>，<code>cable</code>，<code>hub</code>，<code>router</code>，<code>modem</code></p>
+<p>而根据我们需要安装的网络类型，可以忽略某些网络组件，如：无线网络不需要电缆(cable)</p>
+<div class="admonition note">
+<p class="admonition-title">1. <code>NIC</code>(network interface card)</p>
+<ul>
+<li>俗称网卡，用于将一台计算机与另一台计算机连接到网络的硬件组件</li>
+<li>支持 10, 100 到 1000 mb/s 的传输速率</li>
+<li>MAC 地址 或 物理地址 在 IEEE 分配的网卡芯片上编码，以唯一标识网卡</li>
+<li>MAC 地址存储在 PROM(Programmable read-only memory，可编程只读存储器) 中</li>
+<li>网卡类型：<ul>
+<li><code>Wired NIC</code>：有线网卡位于主板内，电缆 和 connector(连接器) 与 wired NIC 一起使用，以传输数据</li>
+<li><code>Wireless NIC</code>：无线网卡包含用于无线网络获取连接的天线；例如，便携式计算机(laptop computer)包含无线网卡</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. <code>hub</code></p>
+<ul>
+<li>集线器 hub 是用于在多个设备之间划分网络连接的硬件设备</li>
+<li>当计算机网络请求某些信息时，它首先通过电缆将请求发送到集线器 hub，hub 会将此请求广播到整个网络，所有设备都将检查请求是否属于他们；否则，请求将被丢弃</li>
+<li>集线器使用的进程会消耗更多带宽并限制通信量；如今，集线器的使用已经过时，取而代之的是更高级的计算机网络组件，例如 Switch，router</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. <code>switch</code></p>
+<ul>
+<li>交换机 Switch 是用于连接计算机网络上的多个设备的硬件设备，包含比 hub 更高级的功能</li>
+<li>交换机包含更新的表，用于决定数据的传输位置</li>
+<li>交换机根据传入消息中存在的物理地址将消息传递到正确的目标，而非像 hub 一样将消息广播到整个网络</li>
+<li>我们可以说 Switch 在 source 和 destination 之间提供了直接连接，提高了网络的速度</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. <code>router</code></p>
+<ul>
+<li>路由器 router 是用于将 LAN 与 internet 连接的硬件设备，可以接收，分析传入数据报并将其转发到另一个网络</li>
+<li>router 在 OSI Reference model(OSI 参考模型)的第三层(network layer)</li>
+<li>router 根据路由表中的可用信息转发数据包(packet)</li>
+<li>router 从用于传输数据包的可用路径中确定最佳路径</li>
+<li>优点：<ul>
+<li><code>Security</code>：传输到网络的信息将遍历整个 cable，但只有已寻址的指定设备可以读取数据</li>
+<li><code>Reliability</code>：如果服务器已停止运行，则网络将关闭，但路由器所服务的其他网络不会受到影响</li>
+<li><code>Performance</code>：路由器可增强网络的整体性能。假设网络中有 24 个工作站生成相同数量的流量。这会增加网络上的流量负载。路由器将单个网络分成两个网络，每个网络 12 个工作站，将流量负载减少一半</li>
+<li><code>Network range</code></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">5. <code>modem</code></p>
+<ul>
+<li>调制解调器 modem 是一种硬件设备，运行计算机通过现有电话线连接到互联网</li>
+<li>modem 未与主板集成，而是安装在主板上的PCI插槽上</li>
+<li>modem 代表 Modulator/Demodulator，它通过电话线将数字数据转换为模拟信号</li>
+<li>根据速度和传输速率的差异，可分为如下几类：<ul>
+<li>Standard <abbr title="program counter，程序计数器，12位，用于保存当前执行指令后从内存中读取的下一条指令的地址">PC</abbr> modem 或 Dial-up modem (标准 <abbr title="program counter，程序计数器，12位，用于保存当前执行指令后从内存中读取的下一条指令的地址">PC</abbr> modem 或 拨号 modem)</li>
+<li>Cellular Modem(蜂窝 modem)</li>
+<li>Cable modem(电缆 modem)</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. <code>cable</code> &amp; <code>connector</code></p>
+<ul>
+<li>电缆 cable 是用于传输信号的传输介质</li>
+<li>电缆的分类：<ul>
+<li><code>Twisted pair cable</code>(双绞线电缆)</li>
+<li><code>Coaxial cable</code>(同轴电缆)</li>
+<li><code>Fibre-optic cable</code>(光纤电缆)</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="5">5.计算机网络类型</h3>
+<p>计算机网络是一组相互链接的计算机，使计算机能够与另一台计算机通信并共享其资源、数据和应用程序</p>
+<div class="admonition note">
+<p class="admonition-title">计算机网络按 大小 进行分类</p>
+<ul>
+<li><code>LAN</code>(<code>Local Area Network</code>，局域网)</li>
+<li><code>PAN</code>(<code>Personal Area Network</code>，个人局域网)</li>
+<li><code>MAN</code>(<code>Metropolitan Area Network</code>，城域网)</li>
+<li><code>WAN</code>(<code>Wide Area Network</code>，广域网)</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">1. <code>LAN</code></p>
+<ul>
+<li>局域网是在建筑物、办公室等小区域内相互连接的一组计算机</li>
+<li>LAN 用于通过 双绞线，同轴电缆 等通信介质连接两台或多台个人计算机</li>
+<li>数据在局域网中以极快的速度传输，局域网提供更高的安全性</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/local-area-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/local-area-network.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. <code>PAN</code></p>
+<ul>
+<li>个人局域网是安排在个人内部的网络，通常在 10 米的范围内，用于连接个人使用的计算机设备</li>
+<li><code>PAN</code> 的概念由 <code>Thomas Zimmerman</code> 提出</li>
+<li>个人区域网络覆盖30英尺的区域</li>
+<li>用于开发个人局域网的个人计算机设备是笔记本电脑，移动电话，媒体播放器和游戏站</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/personal-area-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/personal-area-network.png"/></a></p>
+<ul>
+<li><code>PAN</code> 的分类：<ul>
+<li>Wired PAN 有线个人局域网：通过 USB 创建</li>
+<li>Wireless PAN 无线个人局域网：通过简单地使用无线技术（如：<code>wifi</code>，<code>Bluetooth</code>）</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/two-types-of-personal-area-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/two-types-of-personal-area-network.png"/></a></p>
+<ul>
+<li><code>PAN</code> 举例：<ul>
+<li><code>Body Area Network</code>：体域网 是与人一起移动的网络；如：移动网络</li>
+<li><code>Offline Network</code>：离线网络 可以在家庭内部创建，因此也称 家庭网络；家庭网络旨在集成打印机、计算机、电视等设备，但它们未连接到互联网</li>
+<li><code>Small Home Office</code>：小型家庭办公室 用于使用 VPN 将各种设备连接到 互联网 和 公司网络</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. <code>MAN</code></p>
+<ul>
+<li>城域网是通过互连不同的 LAN 形成更大的网络来覆盖更大地理区域的网络</li>
+<li>政府机构使用 MAN 与公民和私营企业建立联系</li>
+<li>在 MAN 中，各种 LAN 通过电话交换线相互连接</li>
+<li>MAN中使用最广泛的协议是 <code>RS-232</code>，<code>Frame Relay</code>(帧中继)，<code>ATM</code>，<code>ISDN</code>，<code>OC-3</code>，<code>ADSL</code>等</li>
+<li>它的范围比局域网（LAN）广</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/metropolitan-area-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/metropolitan-area-network.png"/></a></p>
+<ul>
+<li><code>MAN</code> 的应用：<ul>
+<li>MAN用于城市银行之间的通信</li>
+<li>它可以在航空公司预订中使用</li>
+<li>它可以在城市内的大学中使用</li>
+<li>它也可以用于军事中的通信</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. <code>WAN</code></p>
+<ul>
+<li>广域网 <code>WAN</code> 是扩展到大地理区域（如州或国家）的网络，比局域网大得多</li>
+<li>不限于单个位置，而是通过 电话线、光纤电缆 或 卫星链路<code>satellite links</code> 跨越较大的地理区域</li>
+<li><code>internet</code> 互联网 是最大的 <code>WAN</code> 之一</li>
+<li>广域网广泛用于商业、政府和教育领域</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/wide-area-network.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/wide-area-network.png"/></a></p>
+<ul>
+<li>应用：<ul>
+<li><code>Mobile Broadband</code>：移动宽带，4G网络在一个地区或国家被广泛使用</li>
+<li><code>Last mile</code>：一家 电信公司 用于通过光纤连接他们的家庭来为数百个城市的客户提供互联网服务</li>
+<li><code>Private network</code>：专用网络，一家 银行 提供连接44个办事处的专用网络。该网络是使用电信公司提供的电话租用线路建立的</li>
+</ul>
+</li>
+<li>优势：<ul>
+<li><code>Geographical area</code>：广域网通过较大的地理区域<ul>
+<li>假设如果我们办公室的分支机构位于不同的城市，那么我们可以通过WAN与他们联系</li>
+<li>互联网提供了一条租用线路，通过它我们可以与另一个分支机构连接</li>
+</ul>
+</li>
+<li><code>Centralized data</code>：在WAN网络的情况下，<strong>数据是集中的</strong>。因此，我们不需要购买电子邮件，文件或备份服务器</li>
+<li><code>Get updated files</code>：软件公司在实时服务器上工作。因此，程序员在几秒钟内获得更新的文件</li>
+<li><code>Exchange messages:</code>：在 WAN 网络中，消息传输速度很快。Facebook，Whatsapp，Skype等网络应用程序允许您与朋友交流</li>
+<li><code>Sharing of software and resources</code>：在 WAN 网络中，我们可以共享软件和其他资源，例如硬盘驱动器，<abbr title="Random-access Memory，随机访问内存">RAM</abbr></li>
+<li><code>Global business</code>：我们可以通过互联网在全球范围内开展业务</li>
+<li><code>High bandwidth</code>：如果我们为我们公司使用租用线路，那么这将提供高带宽。高带宽提高了数据传输速率，从而提高了我们公司的生产力</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Security issue</code>：与 LAN 和 MAN 网络相比，WAN 网络具有更多的安全问题，因为所有技术都结合在一起，从而产生了安全问题</li>
+<li><code>Needs Firewall &amp; antivirus software</code>：数据在互联网上传输，可以被黑客更改或黑客入侵，因此需要使用防火墙。有些人可以在我们的系统中注入病毒，因此需要防病毒软件来防止此类病毒</li>
+<li><code>High Setup cost</code>：WAN网络的安装成本很高，因为它涉及购买路由器，交换机</li>
+<li><code>Troubleshooting problems</code>：它覆盖了很大的区域，因此很难解决问题</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title"><code>Internetwork</code></p>
+<ul>
+<li>互联网络定义为使用设备连接两个或多个计算机网络 LAN 或 WAN 或计算机网段(<code>network segments</code>)，它们由本地寻址方案配置。此过程称为 <code>internetworking</code>(互联互通)</li>
+<li>公共、私有、商业、工业或政府计算机网络之间的互连也可以定义为 <code>internetworking</code>(互联互通)</li>
+<li>网络使用互联网协议(<code>internet protocol</code>)</li>
+<li>用于互联的参考模型是 <code>Open System Interconnection</code>（<code>OSI</code>，开放系统互连）</li>
+<li>互联网的类型<ul>
+<li><code>Extranet</code>：外联网是基于 传输控制协议(Transmission Control protocol, TCP)、互联网协议(internet protocol, IP) 等互联网协议的*<em>通信网络</em>，它用于信息共享<ul>
+<li>访问酒店后台仅限于拥有登录凭据的用户</li>
+<li>外联网是最低级别的 <code>internetworking</code></li>
+<li>它可以分类为 <code>MAN</code>，<code>WAN</code> 或其他计算机网络</li>
+<li>外联网不能只有一个 <code>LAN</code>，它必须至少有一个与外部网络的连接</li>
+</ul>
+</li>
+<li><code>Intranet</code>：内网是基于 传输控制协议(Transmission Control protocol, TCP)、互联网协议(internet protocol, IP) 等互联网协议的<strong>专用网络</strong><ul>
+<li>内部网属于只有组织的员工或成员才能访问的组织</li>
+<li>内部网的主要目的是在组织员工之间共享信息和资源</li>
+<li>内联网提供了分组工作和电话会议的功能</li>
+<li>内网的优势：<ul>
+<li><code>Communication</code>：它提供了一种廉价而轻松的沟通。组织的一名员工可以通过电子邮件、聊天与另一名员工进行交流</li>
+<li><code>Time-saving</code>：内网信息实时共享，省时</li>
+<li><code>Collaboration</code>：协作是内联网最重要的优势之一。该信息在组织的员工之间分发，只能由授权用户访问</li>
+<li><code>Platform independency</code>：平台独立性，这是一个中性架构，因为计算机可以连接到具有不同架构的另一台设备</li>
+<li><code>Cost effective</code>：性价比，人们可以使用浏览器查看数据和文档，并通过 Intranet 分发重复的副本。这导致成本的降低</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<h3 id="6topologies">6.Topologies 拓扑</h3>
+<p>topology 定义了所有组件相互连接的网络拓扑；由两类拓扑：物理拓扑<code>physical topology</code> 和 逻辑拓扑<code>logical topology</code></p>
+<div class="admonition note">
+<p class="admonition-title">网络拓扑的类型</p>
+<ol>
+<li><code>Bus Topology</code> 总线拓扑</li>
+<li><code>Ring Topology</code> 环形拓扑</li>
+<li><code>Tree Topology</code> 树形拓扑</li>
+<li><code>Star Topology</code> 星型拓扑</li>
+<li><code>Mesh Topology</code> 网状拓扑</li>
+<li><code>Hybrid Topology</code> 混合拓扑</li>
+</ol>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">1. <code>Bus Topology</code></p>
+<ul>
+<li>所有站点都通过称为<strong>主干电缆(backbone cable)</strong>的单根电缆连接</li>
+<li>每个节点要么通过引入电缆连接到主干电缆，要么直接连接到主干电缆</li>
+<li>节点通过网络发送消息时，无论是否寻找(addressed)，网络中所有可用的站点都将收到该消息</li>
+<li>总线拓扑主要用于  802.3 (ethernet，以太网) and 802.4 standard networks (802.4 标准网络)</li>
+<li>与其他拓扑相比，总线拓扑的配置非常简单</li>
+<li>主干电缆(<code>backbone cable</code>) 被称为 <code>single lane</code>(单通道)，通过该通道将消息广播到所有电台</li>
+<li>总线拓扑最常见的访问方法是 <code>CSMA</code>(<code>Carrier Sense Multiple Access</code>，载波监听多路访问)</li>
+<li><code>CSMA</code>(<code>Carrier Sense Multiple Access</code>)：<ul>
+<li>是一种媒体访问控制，用于控制数据流，以保持数据完整性，即数据包不会丢失</li>
+<li>有两种替代方法可以处理两个节点同时发送消息时出现的问题：</li>
+<li><code>CSMA CD</code>：CSMA CD (Collision detection，碰撞检测) 是一种用于检测碰撞的访问方法；一旦检测到冲突，发送方将停止传输数据</li>
+<li><code>CSMA CA</code>：CSMA CA (Collision Avoidance，碰撞避免)是一种通过检查传输介质是否繁忙来避免冲突的访问方法；如果繁忙，则发送方会等到媒体空闲。这种技术有效地降低了碰撞的可能性。它不适用于“碰撞后恢复”</li>
+</ul>
+</li>
+<li>总线控制的优点：<ul>
+<li><code>Low-cost cable</code>：节点直接连接到电缆，而不通过集线器，因此，安装的初始成本很低</li>
+<li><code>Moderate data speeds</code>：同轴或双绞线电缆主要用于支持高达 10 Mbps 的基于总线的网络</li>
+<li><code>Familiar technology</code>：总线拓扑是一种熟悉的技术，因为安装和故障排除技术是众所周知的，并且硬件组件很容易获得</li>
+<li><code>Limited failure</code>：一个节点中的故障不会对其他节点产生任何影响</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Extensive cabling</code>：总线拓扑非常简单，但仍然需要大量布线</li>
+<li><code>Difficult troubleshooting</code>：故障排除困难，它需要专门的测试设备来确定电缆故障。如果电缆发生任何故障，则会中断所有节点的通信</li>
+<li><code>Signal interference</code>：信号干扰，如果两个节点同时发送消息，则两个节点的信号相互碰撞</li>
+<li><code>Reconfiguration difficult</code>：重新配置困难，向网络添加新设备会降低网络速度</li>
+<li><code>Attenuation</code>：衰减是信号丢失导致通信问题。中继器用于重新生成信号</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-bus-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-bus-topology.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. ring topology</p>
+<ul>
+<li>环形拓扑与总线拓扑类似，但使用端(ends)连接</li>
+<li>从前一台计算机接收消息的节点将重新传输到下一个节点，<strong>数据单向流动</strong>，并且数据在环内沿顺时针<strong>循环流动</strong></li>
+<li>环形拓扑最常见的访问方式是：<code>token passing</code>令牌传递<ul>
+<li><code>token passing</code>：是一种网络访问方法，其中令牌从一个节点传递到另一个节点</li>
+<li><code>token</code>：它是一个在网路中流动的帧(frame)</li>
+</ul>
+</li>
+<li>工作原理：<ul>
+<li>令牌在网络中移动，并在计算机之间传递，直到到达目的地；发送方通过将地址与数据一起放置来修改令牌</li>
+<li>数据从一个设备传递到另一个设备，直到目标地址匹配。目标设备收到令牌后，就会向发送方发送确认</li>
+<li>在环形拓扑中，令牌用作载体</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li><code>Network Management</code>：网络管理，可以从网络中删除故障设备，而不会使网络关闭</li>
+<li><code>Product availability</code>：产品可用性，有许多用于网络操作和监控的硬件和软件工具可用</li>
+<li><code>Cost</code>：成本，双绞线布线价格低廉且易于获得。因此，安装成本非常低</li>
+<li><code>Reliable</code>：可靠，它是一个更可靠的网络，因为通信系统不依赖于单个主机</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Difficult troubleshooting</code>：故障排除困难，它需要专门的测试设备来确定电缆故障。如果电缆发生任何故障，则会中断所有节点的通信</li>
+<li><code>Failure</code>：故障，一个站点的故障导致整个网络的故障</li>
+<li><code>Reconfiguration difficult</code>：重新配置困难，向网络添加新设备会降低网络速度</li>
+<li><code>Delay</code>：延迟，通信延迟与节点数成正比。添加新设备会增加通信延迟</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-ring-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-ring-topology.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. star topology</p>
+<ul>
+<li>星形拓扑是网络的一种布置<code>arrangement</code>，其中每个节点都连接到 中央集线器<code>central hub</code>，交换机<code>switch</code> 或 中央计算机<code>central computer</code></li>
+<li>中央计算机称为 <strong>服务器</strong>，连接到服务器的外围设备称为 <strong>客户端</strong></li>
+<li>同轴电缆<code>coaxial cable</code> 或 <code>RJ-45 cable</code> 用于连接计算机</li>
+<li><code>hub</code> 或 <code>switch</code> 主要用作物理星型拓扑中的连接设备</li>
+<li>星型拓扑是网络实现中<strong>最常用</strong>的拓扑</li>
+<li>优点：<ul>
+<li><code>Efficient troubleshooting</code>：高效的故障排除，与总线拓扑相比，星形拓扑中的故障排除非常有效。在总线拓扑中，管理者必须检查电缆的公里数。在星形拓扑中，所有站点都连接到集中式网络。因此，网络管理员必须转到单个工作站来解决问题</li>
+<li><code>Network control</code>：网络控制，复杂的网络控制功能可以在星形拓扑中轻松实现。星形拓扑中所做的任何更改都会自动适应</li>
+<li><code>Limited failure</code>：故障限制，由于每个站点都使用自己的电缆连接到中央集线器，因此一根电缆的故障不会影响整个网络</li>
+<li><code>Familiar technology</code>：技术成熟，星形拓扑是一种成熟的技术，因为它的工具具有成本效益</li>
+<li><code>Easily expandable</code>：它很容易扩展，因为可以将新站添加到集线器上的开放端口</li>
+<li><code>Cost effective</code>：性价比，星形拓扑网络具有成本效益，因为它使用廉价的同轴电缆</li>
+<li><code>High data speeds</code>：高数据速度，它支持大约 100Mbps 的带宽。以太网 100BaseT 是最受欢迎的星形拓扑网络之一</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>A Central point of failure</code>：如果中央集线器或交换机出现故障，则所有连接的节点将无法相互通信</li>
+<li><code>Cable</code>：当需要大量布线时，电缆布线会变得困难</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-star-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-star-topology.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">4. tree topology</p>
+<ul>
+<li>树形拓扑结合了 总线拓扑 和 星形拓扑 的特点</li>
+<li>树拓扑是一种结构，其中所有计算机都以分层方式相互连接</li>
+<li>树拓扑中最顶层的节点称为根节点，所有其他节点都是根节点的后代</li>
+<li>两个节点之间只有一条路径用于数据传输。因此，它形成了一个父子层次结构</li>
+<li>优点：<ul>
+<li><code>Support for broadband transmission</code>：支持宽带传输，树形拓扑主要用于提供宽带传输，即信号长距离发送而不会衰减</li>
+<li><code>Easily expandable</code>：易于扩展，我们可以将新设备添加到现有网络中。因此，我们可以说树拓扑很容易扩展</li>
+<li><code>Easily manageable</code>：易于管理，在树形拓扑中，整个网络被划分为称为星形网络的段，这些段可以轻松管理和维护</li>
+<li><code>Error detection</code>：错误检测，在树拓扑中，错误检测和纠错非常容易</li>
+<li><code>Limited failure</code>：故障有限，一个站点的故障不会影响整个网络</li>
+<li><code>Point-to-point wiring</code>：点对点接线，它具有用于各个段的点对点布线</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Difficult troubleshooting</code>：故障排除困难，如果节点中发生任何故障，则很难解决问题</li>
+<li><code>High cost</code>：成本高，宽带传输所需的设备非常昂贵</li>
+<li><code>Failure</code>：故障，树形拓扑主要依赖于主总线电缆，主总线电缆中的故障会损坏整个网络</li>
+<li><code>Reconfiguration difficult</code>：重新配置困难，如果添加新设备，则很难重新配置</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-tree-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-tree-topology.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">5. mesh topology</p>
+<ul>
+<li>网状拓扑是一种网络布局(arrangement)，其中计算机通过各种冗余连接相互连接</li>
+<li>从一台计算机到另一台计算机有多个路径</li>
+<li><strong>它不包含交换机、集线器或任何充当中央通信点的中央计算机</strong></li>
+<li>互联网是网状拓扑的一个例子</li>
+<li>网状拓扑主要用于通信故障是一个关键问题的 WAN 实现</li>
+<li>网状拓扑主要用于无线网络</li>
+<li>电缆数量 = <span class="arithmatex">\(\frac {n(n-1)}2\)</span> （n 位结点个数）</li>
+<li>分类：<ul>
+<li><code>full mesh topology</code>：全网状拓扑，每台计算机都连接到网络中可用的所有计算机</li>
+<li><code>partial mesh topology</code>：部分网状拓扑，并非所有计算机（某些计算机）都连接到它们经常与之通信的计算机</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li><code>Reliable</code>：可靠，网状拓扑网络非常可靠，好像任何链路故障都不会影响连接的计算机之间的通信</li>
+<li><code>Fast Communication</code>：快速通信，节点之间的通信非常快</li>
+<li><code>Easier Reconfiguration</code>：更轻松的重新配置，添加新设备不会中断其他设备之间的通信</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Cost</code>：成本，网状拓扑包含大量连接的设备（如路由器）和比其他拓扑更多的传输介质</li>
+<li><code>Management</code>：管理，网状拓扑网络非常大，很难维护和管理。如果不仔细监控网络，则不会检测到通信链路故障</li>
+<li><code>Efficiency</code>：效率，在此拓扑中，冗余连接很高，这会降低网络效率</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-mesh-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-mesh-topology.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">6. hybrid topology</p>
+<ul>
+<li>各种不同拓扑的组合称为<strong>混合拓扑</strong></li>
+<li>混合拓扑是不同链路和节点之间用于传输数据的连接</li>
+<li>当两个或多个不同的拓扑组合在一起时称为混合拓扑，如果相似的拓扑相互连接，则不会导致混合拓扑。例如，如果 ICICI 银行的一个分支中存在环形拓扑，而 ICICI 银行的另一个分支中存在总线拓扑，则连接这两个拓扑将生成混合拓扑</li>
+<li>优点：<ul>
+<li><code>Reliable</code>：可靠，如果网络的任何部分发生故障，则不会影响网络其余部分的功能</li>
+<li><code>Scalable</code>：可扩展，通过添加新设备可以轻松扩展网络规模，而不会影响现有网络的功能</li>
+<li><code>Flexible</code>：灵活，这种拓扑非常灵活，因为它可以根据组织的要求进行设计</li>
+<li><code>Effective</code>：高效，混合拓扑非常有效，因为它可以设计成网络强度最大化，网络弱点最小化</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li><code>Complex design</code>：复杂设计，混合拓扑的主要缺点是混合网络的设计。设计混合网络的架构非常困难</li>
+<li><code>Costly Hub</code>：昂贵的集线器，混合拓扑中使用的集线器非常昂贵，因为这些集线器与其他拓扑中使用的常用集线器不同</li>
+<li><code>Costly infrastructure</code>：昂贵的基础设施，基础设施成本非常高，因为混合网络需要大量的布线、网络设备等</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-hybrid-topology.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/computer-network-topologies-hybrid-topology.png"/></a></p>
+</div>
+<h3 id="7transmission-modes">7.Transmission Modes 传输模式</h3>
+<div class="admonition note">
+<p class="admonition-title">传输模式</p>
+<ul>
+<li>数据从一个设备传输到另一个设备的方式，称为<strong>传输模式<code>transmission mode</code></strong>，也称为 <strong>通信模式</strong><code>communication mode</code></li>
+<li>每个通信通道都有一个与之关联的方向，传输介质提供方向，因此传输模式也称为 <strong>定向模式</strong><code>directional mode</code></li>
+<li>传输模式在 <strong>物理层</strong> 定义</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">传输模式的分类</p>
+<ol>
+<li><code>Simplex mode</code>：单工模式</li>
+<li><code>Half-duplex mode</code>：半双工模式</li>
+<li><code>Full-duplex mode</code>：全双工模式</li>
+</ol>
+</div>
+<div class="admonition note">
+<p class="admonition-title">1. <code>simplex mode</code></p>
+<ul>
+<li>在单工模式下，通信是单向的，即数据在一个方向上流动（设备只能发送数据但无法接收数据，或者可以接收数据但无法发送数据）</li>
+<li>由于通信需要双向交换数据，因而单工模式不是很流行</li>
+<li>应用：<ul>
+<li>业务领域，就像在不需要任何相应回复的销售中一样</li>
+<li>广播电台是一个单工频道，因为它将信号传输给听众，但绝不允许他们传回去</li>
+<li>键盘和显示器也是单工模式，因为键盘只能接受来自用户的数据，而显示器只能用于在屏幕上显示数据</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li>在单工模式下，该站可以利用通信通道的整个带宽，以便一次可以传输更多数据</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>通信是单向的，因此设备之间没有相互通信</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-simplex-mode.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-simplex-mode.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">2. <code>half-duplex mode</code></p>
+<ul>
+<li>在半双工信道中，方向可以反转，即站点也可以发送和接收数据</li>
+<li>消息在两个方向上流动，但不是同时流动</li>
+<li>通信信道的整个带宽一次在一个方向上利用</li>
+<li>在半双工模式下，可以执行错误检测，如果发生任何错误，则接收器请求发送方重新传输数据</li>
+<li>应用：<ul>
+<li>在对讲机中，一方说话，另一方倾听。停顿了一下，对方说话，第一方听。同时说话会产生无法理解的失真声音</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li>两个设备都可以发送和接收数据，也可以在数据传输过程中利用通信通道的整个带宽</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>当一个设备发送数据时，另一个设备必须等待，这会导致在正确的时间发送数据的延迟</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-half-duplex-mode.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-half-duplex-mode.png"/></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">3. <code>full-duplex mode</code></p>
+<ul>
+<li>在全双工模式下，通信是双向的，即数据在两个方向上流动</li>
+<li>两个站可以同时发送和接收消息</li>
+<li>全双工模式有两个单工通道。一个通道具有沿一个方向移动的流量，另一个通道具有沿相反方向流动的流量</li>
+<li>全双工模式是设备之间最快的通信模式</li>
+<li>应用：<ul>
+<li>电话网络：当两个人通过电话线相互通信时，双方都可以同时交谈和倾听</li>
+</ul>
+</li>
+<li>优点：<ul>
+<li>两个站可以同时发送和接收数据</li>
+</ul>
+</li>
+<li>缺点：<ul>
+<li>如果设备之间不存在专用路径，则通信通道的容量分为两部分</li>
+</ul>
+</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-full-duplex-mode.png"><img alt="" src="https://static.javatpoint.com/tutorial/computer-network/images/transmission-modes-full-duplex-mode.png"/></a></p>
+</div>
+<table>
+<thead>
+<tr>
+<th align="center"><code>Basis for comparison</code></th>
+<th align="center"><code>Simplex mode</code></th>
+<th align="center"><code>Half-duplex mode</code></th>
+<th align="center"><code>Full-duplex mode</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">通信方向</td>
+<td align="center">单向</td>
+<td align="center">通信是双向的，但一次一个</td>
+<td align="center">双向</td>
+</tr>
+<tr>
+<td align="center">发送/接收</td>
+<td align="center">设备只能发送数据但无法接收数据，或者只能接收数据但不能发送数据</td>
+<td align="center">两个设备都可以发送和接收数据， 但一次一个</td>
+<td align="center">两个设备可以同时发送和接收数据</td>
+</tr>
+<tr>
+<td align="center">性能</td>
+<td align="center">半双工模式的性能优于单工模式</td>
+<td align="center">全双工模式的性能优于半双工模式</td>
+<td align="center">全双工模式在单工和半双工模式中具有更好 的性能，因为它使通信通道的容量利用率加倍</td>
+</tr>
+<tr>
+<td align="center">例子</td>
+<td align="center">收音机，键盘，监视器</td>
+<td align="center">对讲机</td>
+<td align="center">电话网络</td>
+</tr>
+</tbody>
+</table>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: Misc" class="md-footer__link md-footer__link--prev" href="../../computer%20organization%26architecture/Misc/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                Misc
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 2.Models" class="md-footer__link md-footer__link--next" href="../2.Models/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                2.Models
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

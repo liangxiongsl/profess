@@ -1,0 +1,937 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../3.Computer%20Instructions/" rel="prev"/>
+<link href="../5.Combinational%20Circuits/" rel="next"/>
+<link href="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>4.Digital Logic Circuits - Professional course</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Professional course" class="md-header__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Professional course
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              4.Digital Logic Circuits
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial" hreflang="en">
+                    计算机组成原理
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-network-tutorial" hreflang="zh">
+                    计算机网络
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/" hreflang="en">
+                    vue.js官网
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==" hreflang="zh">
+                    vue.js游乐场
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/guide/quick-start.html#try-vue-online" hreflang="zh">
+                    vue.js官方教程
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://cn.vuejs.org/tutorial/#step-1" hreflang="zh">
+                    vue.js官方中文教程
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../1.COA%E6%A6%82%E8%BF%B0/">
+        计算机组成原理
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../computer%20network/1.%E6%A6%82%E8%BF%B0/">
+        计算机网络
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        操作系统
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        数据结构
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        刻意练习
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%B7%A5%E7%A8%8B/0.%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/">
+        工程
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Professional course" class="md-nav__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+    Professional course
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          计算机组成原理
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          计算机组成原理
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.COA%E6%A6%82%E8%BF%B0/">
+        1.COA概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.Basic%20CO%26%26Design/">
+        2.Basic CO&amp;&amp;Design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.Computer%20Instructions/">
+        3.Computer Instructions
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          4.Digital Logic Circuits
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        4.Digital Logic Circuits
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.数字计算机
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2logic-gate">
+    2.Logic Gate 逻辑门
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3boolean-algebra">
+    3.boolean algebra 布尔代数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4laws-of-boolean-algebra">
+    4.laws of Boolean algebra布尔代数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5karnaugh-mapk-map">
+    5.Karnaugh map(k-map)
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../5.Combinational%20Circuits/">
+        5.Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../6.Flip%20-%20Flops/">
+        6.Flip   Flops
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../7.Digital%20Components/">
+        7.Digital Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../8.Register%20Transfer%20language/">
+        8.Register Transfer language
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../9.Micro-Operations/">
+        9.Micro Operations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../10.Memory%20Organization/">
+        10.Memory Organization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../11.Pipeline/">
+        11.Pipeline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../Misc/">
+        Misc
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          计算机网络
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/2.Models/">
+        2.Models
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/3.Physical%20Layer/">
+        3.Physical Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/4.Data%20Link%20layer/">
+        4.Data Link layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/5.Network%20Layer/">
+        5.Network Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/6.Routing%20Algorithm/">
+        6.Routing Algorithm
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/7.Transport%20Layer/">
+        7.Transport Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/8.Application%20Layer/">
+        8.Application Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/9.Application%20Protocols/">
+        9.Application Protocols
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/10.Network%20Security/">
+        10.Network Security
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          操作系统
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/2.Process%20Management/">
+        2.Process Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/3.Synchronization/">
+        3.Synchronization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/4.Deadlocks/">
+        4.Deadlocks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/5.Memory%20Management/">
+        5.Memory Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/6.File%20Management/">
+        6.File Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/2.Array/">
+        2.Array
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/3.Linked%20List/">
+        3.Linked List
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/4.Stack/">
+        4.Stack
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/5.Queue/">
+        5.Queue
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/6.Tree/">
+        6.Tree
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/7.Graph/">
+        7.Graph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/8.Searching/">
+        8.Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/9.Sorting/">
+        9.Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/10.Differences/">
+        10.Differences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          刻意练习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          刻意练习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        0.序
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/1.%E6%9C%89%E7%9B%AE%E7%9A%84%E7%9A%84%E7%BB%83%E4%B9%A0/">
+        1.有目的的练习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/2.%E5%A4%A7%E8%84%91%E7%9A%84%E9%80%82%E5%BA%94%E8%83%BD%E5%8A%9B/">
+        2.大脑的适应能力
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/3.%E5%BF%83%E9%87%8C%E8%A1%A8%E5%BE%81/">
+        3.心里表征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/4.%E9%BB%84%E9%87%91%E6%A0%87%E5%87%86/">
+        4.黄金标准
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/5.%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        5.在工作中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/6.%E5%9C%A8%E7%94%9F%E6%B4%BB%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        6.在生活中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/7.%E6%88%90%E4%B8%BA%E6%9D%B0%E5%87%BA%E4%BA%BA%E7%89%A9%E7%9A%84%E8%B7%AF%E7%BA%BF%E5%9B%BE/">
+        7.成为杰出人物的路线图
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/8.%E6%80%8E%E6%A0%B7%E8%A7%A3%E9%87%8A%E5%A4%A9%E7%94%9F%E6%89%8D%E5%8D%8E/">
+        8.怎样解释天生才华
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/9.%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%88%9B%E9%80%A0%E5%85%A8%E6%96%B0%E4%B8%96%E7%95%8C/">
+        9.用刻意练习创造全新世界
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          工程
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/0.%E6%95%B4%E4%BD%93%E4%BB%8B%E7%BB%8D/">
+        0.整体介绍
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/2.%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/">
+        2.数据绑定
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/3.%E8%BF%87%E6%B8%A1%26%E5%8A%A8%E7%94%BB/">
+        3.过渡&amp;动画
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/data%20warehouse/">
+        Data warehouse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/sql/">
+        Sql
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/software%20engineering/">
+        Software engineering
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%B7%A5%E7%A8%8B/github/">
+        Github
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.数字计算机
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2logic-gate">
+    2.Logic Gate 逻辑门
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3boolean-algebra">
+    3.boolean algebra 布尔代数
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4laws-of-boolean-algebra">
+    4.laws of Boolean algebra布尔代数定律
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5karnaugh-mapk-map">
+    5.Karnaugh map(k-map)
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>4.Digital Logic Circuits</h1>
+<h3 id="1">1.数字计算机</h3>
+<p>数字计算机可以被视为执行各种计算任务的数字系统</p>
+<p>按照惯例，数字计算机使用二进制数字系统，该系统由两位：0 和 1</p>
+<p>计算机系统细分为两个功能实体：硬件 和 软件；硬件 由构成设备物理实体的所有 电子元件 和 机电设备 组成；软件 由计算机操作以执行各种数据处理任务的 指令 和 数据 组成</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/digital-computers.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/digital-computers.png"/></a></p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li><abbr title="Central Processing Unit，中央处理单元">CPU</abbr> 包含一个用于操作数据的 <abbr title="Arithmetic &amp; logical unit，算术逻辑单元，大多算术和逻辑运算(+, -, *, /, &amp;, |, !)都在处理器 `processor` 的 `ALU` 中执行">ALU</abbr>，一个用于存储数据的 寄存器，以及一个用于获取和指向指令的 控制电路</li>
+<li>数字计算机的 <abbr title="Memory unit，内存单元，容量为 4096 个字，每个字包含 16位">MU</abbr> 用于存储 指令 和 数据</li>
+<li><abbr title="Random-access Memory，随机访问内存">RAM</abbr> 用于实时处理数据</li>
+<li>IO 用于从用户生出输入并向用户显示最终结果</li>
+</ul>
+</div>
+<h3 id="2logic-gate">2.Logic Gate 逻辑门</h3>
+<div class="admonition 逻辑门">
+<p class="admonition-title">逻辑门</p>
+<ul>
+<li>逻辑门是数字系统的主要组成部分，当满足输入逻辑要求时，它产生二进制的 0 或 1 的信号</li>
+<li>逻辑门通过 图形符号 和 代数表达式 表示</li>
+<li><mark class="critic">7 个基本逻辑门</mark>：AND, OR, XOR, NOT, NAND, NOR, XNOR</li>
+<li>每个逻辑门的 输入-输出二进制变量 之间的关系可以用 <mark class="critic">真值表</mark> 以表格的形式表示</li>
+<li>每个逻辑门都有 1 或 2 个由 A 和 B 指定的 二进制输入变量 和 由 x 指定的 二进制输出变量 （类似于 单元运算 或 二元运算）</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">1. AND Gate</p>
+</div>
+<blockquote>
+<p>仅当其所有输入均为高电平(high)时，它才会提供高输出(high output)</p>
+<p>代数表示：<span class="arithmatex">\(x = A\cdot B\)</span> 或 <span class="arithmatex">\(x = AB\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates.png"/></a></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">2. OR Gate</p>
+</div>
+<blockquote>
+<p>如果存在一个输入为高电平，则提供高输出</p>
+<p>代数表示：<span class="arithmatex">\(x = A + B\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates2.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates2.png"/></a></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">3. NOT Gate</p>
+</div>
+<blockquote>
+<p>NOT 门又称 Inverter，其在输出端生成反电平</p>
+<p>代数表示：</p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">4. NANT Gate(与非门)</p>
+</div>
+<blockquote>
+<p>NOT-AND 门，相当于 AND 门 后跟一个 NOT 门</p>
+<p>如果存在一个输入为低电平，则 NAND 门提供高电平输出</p>
+<p>代数表示：<span class="arithmatex">\(x = (AB)'\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates3.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates3.png"/></a></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">5. NOR Gate(或非门)</p>
+</div>
+<blockquote>
+<p>NOT-OR 门，相当于 OR 门 后跟一个 NOT 门</p>
+<p>如果存在任何输入为高电平，则 NOR 门提供低输出</p>
+<p>代数表示：<span class="arithmatex">\(x = (A + B)'\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates4.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates4.png"/></a></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">6. XOR Gate</p>
+</div>
+<blockquote>
+<p>exclusive-OR gate，如果只有其中一个输入为高电平，则有高输出，以带圈的加号表示（同 0 异 1）</p>
+<p>代数表示：<span class="arithmatex">\(x = A \oplus B = A'B + AB'\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates5.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates5.png"/></a></p>
+</blockquote>
+<div class="admonition note">
+<p class="admonition-title">7. XNOR Gate</p>
+</div>
+<blockquote>
+<p>exclusive-NOR gate 或 equivalence gate，如果只有其中一个输入为低电平，则有高输出</p>
+<p>代数表示：<span class="arithmatex">\(x = (A \oplus B)' = A'B' + AB\)</span></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/logic-gates6.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/logic-gates6.png"/></a></p>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>Gate 也可以翻译成 “栅极” ？</li>
+</ul>
+</div>
+<h3 id="3boolean-algebra">3.boolean algebra 布尔代数</h3>
+<p>布尔代数可以被认为是处理 二元变量 和 逻辑运算 的代数</p>
+<div class="admonition 布尔代数">
+<p class="admonition-title">布尔代数</p>
+<ul>
+<li>布尔代数变量：由 A，B，x，y 等表示；执行的基本操作时 AND，OR，COMPLEMENT（补码，由 Inverter 生成）</li>
+<li>布尔代数函数：大多数由 二进制变量，逻辑运算符号，括号，等号 表示<ul>
+<li>布尔函数 F 可以是 0 或 1，<mark class="critic"><span class="arithmatex">\(F = \begin{cases} 0 &amp; f \ge 1 \\ 1 &amp; f = 0\end{cases}\)</span></mark>，如 F = x + y'z</li>
+<li>定义域是每一个输入的代数变量构成的二进制数的取值范围；如果有 n 个变量，那么定义域是 <span class="arithmatex">\(X \in [0, 2^n), X\in N\)</span></li>
+<li>值域是 0 或 1，即 <span class="arithmatex">\(F \in [0, 1], F\in N\)</span></li>
+</ul>
+</li>
+</ul>
+</div>
+<p>例如：F = x + y'z 的 逻辑图 和 真值表：</p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/boolean-algebra.png"><img align="left" alt="" src="https://static.javatpoint.com/tutorial/coa/images/boolean-algebra.png" width="48%,"/></a></p>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/boolean-algebra2.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/boolean-algebra2.png" width="20%"/></a></p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>n 个输入变量 和 m 个输出变量（即有 m 个输入变量都有 n 个的布尔代数函数方程） 的真值表可以表示成 <span class="arithmatex">\(2^n \times (n + m)\)</span> 的 01 矩阵</li>
+<li><a href="https://www.javatpoint.com/examples-of-boolean-algebra-simplification-using-logic-gates">布尔代数函数转换的示例</a></li>
+</ul>
+</div>
+<h3 id="4laws-of-boolean-algebra">4.laws of Boolean algebra布尔代数定律</h3>
+<div class="admonition 布尔代数定律">
+<p class="admonition-title">布尔代数定律</p>
+</div>
+<blockquote>
+<ol>
+<li>交换律(<code>Commutative Law</code>)：<span class="arithmatex">\(A + B = B + A\)</span>，<span class="arithmatex">\(A\cdot B = B\cdot A\)</span></li>
+<li>乘法结合律(<code>Associative Law of multiplication</code>)：<span class="arithmatex">\(A\cdot (B\cdot C) = (A\cdot B)\cdot C\)</span></li>
+<li><mark class="critic">分配律</mark>(<code>Distributive Law</code>)：<span class="arithmatex">\(A(B+C) = AB + AC\)</span>，<span class="arithmatex">\(A+BC = (A+B)(A+C)\)</span></li>
+<li>废止律？(<code>Annulment law</code>)：<span class="arithmatex">\(A\cdot 0 = 0\)</span>，<span class="arithmatex">\(A + 1 = 1\)</span></li>
+<li>恒等律(<code>Identity law</code>)：<span class="arithmatex">\(A\cdot 1 = A\)</span>，<span class="arithmatex">\(A+0=A\)</span></li>
+<li><mark class="critic">幂等律</mark>(<code>Idempotent law</code>)：<span class="arithmatex">\(A + A = A\)</span>，<span class="arithmatex">\(A\cdot A = A\)</span></li>
+<li>补码定律？(<code>Complement law</code>)：<span class="arithmatex">\(A + A' = 1\)</span>，<span class="arithmatex">\(A\cdot A' = 0\)</span></li>
+<li>双重否定律(<code>Double negation law</code>)：<span class="arithmatex">\(((A)')' = A\)</span></li>
+<li><mark class="critic">吸收率</mark>(<code>Absorption law</code>)：<span class="arithmatex">\(A(A + B) = A\)</span>，<span class="arithmatex">\(A + AB = A\)</span></li>
+</ol>
+</blockquote>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>除了分配率(2)之外，其他定律都能用 布尔代数函数的定义 很简单地证明</li>
+<li>分配率(2) 可以通过 吸收率 证明</li>
+<li>如何化简布尔代数函数？<ol>
+<li>使用 分配率 将函数展开</li>
+<li>使用 幂等率 和 吸收率 将多余的项消去</li>
+</ol>
+</li>
+</ul>
+</div>
+<p>De Morgan's Law(德摩根定律) 也称 De Morgan's theorem(德摩根定律)，其依赖于对偶性(Duality)的概念</p>
+<p>对偶：将 0 替换为 1，将 AND 替换为 OR，将 OR 替换为 AND</p>
+<div class="admonition note">
+<p class="admonition-title">De Morgan's law</p>
+</div>
+<blockquote>
+<p>德摩根定律有助于我们解决 digital electronics 数字电子学 中的代数问题，其声明为：</p>
+<ol>
+<li>合取的否定是否定的析取：这意味着 两个变量的乘积的补码 等于 各个变量的补码之和，即 <span class="arithmatex">\((A\cdot B)' = A' + B'\)</span></li>
+<li>析取的否定是否定的合取：这意味着 两个变量之和的补码 等于 各个变量的补码的乘积，即 <span class="arithmatex">\((A + B)' = A'B'\)</span></li>
+</ol>
+</blockquote>
+<p><a href="https://www.javatpoint.com/simplification-using-boolean-algebra">布尔代数定律的实例</a></p>
+<h3 id="5karnaugh-mapk-map">5.Karnaugh map(k-map)</h3>
+<p>map 方法用于简化布尔表达式，map 简化被视为真值表的图形排列，它允许轻松解释选择代数表示函数所需的最小项数</p>
+<p>map 方法又称 Karnaugh map 或 k-map</p>
+<p>k-map 将函数的变量排列划分为两个非空的变量子排列（如 ABCD =&gt; AB, CD），将这两个子排列分别作为 x 轴 和 y 轴，</p>
+<p>记两个排列的变量数为 a 和 b，那么有 <span class="arithmatex">\(n = a + b\)</span> <span class="arithmatex">\(\implies\)</span> <span class="arithmatex">\(2^n = 2^a \cdot 2^b\)</span>，即 x 轴 和 y 轴的取值分别是 <span class="arithmatex">\(0..2^a-1\)</span> 和 <span class="arithmatex">\(0..2^b-1\)</span> （但是远离坐标原点的 x 轴 或 y 轴取值可能不是递增的），</p>
+<p>由此可以确定 xoy 平面上拥有 <span class="arithmatex">\(2^a\cdot 2^b = 2^n\)</span> 个整数点，每个点 对应 或 映射 为一个最小项（因此可以看作是一个 3 维空间，但是由于 xoy 是由整数点构成的，所以可以用二维的表来表示这个特殊的 3 为空间），</p>
+<p>但是限制 xoy 上任意一点需要满足一条性质：<strong>(循环)相邻点</strong>的最小项只有某一个二进制位不同</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>k-map 通常可以用于 以最小项的形式表达的 布尔代数函数 的化简</li>
+<li>k-map 可以将 <span class="arithmatex">\(2^a\times 2^b\)</span> 的矩阵中的某个全为 1 的子矩阵表示为一项，化简时我们通常需要求 <strong>子矩阵的可重复覆盖</strong> 方案中子矩阵最少的方案</li>
+</ul>
+</div>
+<div class="admonition 例图">
+<p class="admonition-title">例图</p>
+<ul>
+<li>双变量构成的 k-map：</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/map-simplification.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/map-simplification.png"/></a></p>
+<ul>
+<li>三个变量构成的 k-map：</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/map-simplification3.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/map-simplification3.png"/></a></p>
+<ul>
+<li>AND 和 OR 运算的 k-map：</li>
+</ul>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://static.javatpoint.com/tutorial/coa/images/map-simplification2.png"><img alt="" src="https://static.javatpoint.com/tutorial/coa/images/map-simplification2.png"/></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>n 个变量的函数有 <span class="arithmatex">\(2^n\)</span> 个最小项</li>
+<li>真值表的实质就是以 最小项坐标轴，对于每个最小项都有一个取值 f</li>
+</ul>
+</div>
+<p><a class="glightbox" data-desc-position="bottom" data-height="auto" data-type="image" data-width="100%" href="https://www.javatpoint.com/examples-of-boolean-algebra-simplifications-using-the-map-method"><img alt="例题" src="https://www.javatpoint.com/examples-of-boolean-algebra-simplifications-using-the-map-method"/></a></p>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 3.Computer Instructions" class="md-footer__link md-footer__link--prev" href="../3.Computer%20Instructions/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                3.Computer Instructions
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 5.Combinational Circuits" class="md-footer__link md-footer__link--next" href="../5.Combinational%20Circuits/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                5.Combinational Circuits
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>

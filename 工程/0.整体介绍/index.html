@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="zh">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/9.%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%88%9B%E9%80%A0%E5%85%A8%E6%96%B0%E4%B8%96%E7%95%8C/" rel="prev"/>
+<link href="../1.%E6%A6%82%E8%BF%B0/" rel="next"/>
+<link href="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png" rel="icon"/>
+<meta content="mkdocs-1.4.2, mkdocs-material-9.1.6" name="generator"/>
+<title>0.整体介绍 - Professional course</title>
+<link href="../../assets/stylesheets/main.ded33207.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.a0c5b2b5.min.css" rel="stylesheet"/>
+<style>:root{--md-admonition-icon--note:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M64 32C28.7 32 0 60.7 0 96v320c0 35.3 28.7 64 64 64h224V368c0-26.5 21.5-48 48-48h112V96c0-35.3-28.7-64-64-64H64zm384 320H336c-8.8 0-16 7.2-16 16v112l32-32 64-64 32-32z"/></svg>');--md-admonition-icon--abstract:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M96 0C43 0 0 43 0 96v320c0 53 43 96 96 96h320c17.7 0 32-14.3 32-32s-14.3-32-32-32v-64c17.7 0 32-14.3 32-32V32c0-17.7-14.3-32-32-32H96zm0 384h256v64H96c-17.7 0-32-14.3-32-32s14.3-32 32-32zm32-240c0-8.8 7.2-16 16-16h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16zm16 48h192c8.8 0 16 7.2 16 16s-7.2 16-16 16H144c-8.8 0-16-7.2-16-16s7.2-16 16-16z"/></svg>');--md-admonition-icon--info:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-40-176h24v-64h-24c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24h-80c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"/></svg>');--md-admonition-icon--tip:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M480 32c0-12.9-7.8-24.6-19.8-29.6S434.5.2 425.3 9.3L381.7 53c-48 48-113.1 75-181 75H64c-35.3 0-64 28.7-64 64v96c0 35.3 28.7 64 64 64v128c0 17.7 14.3 32 32 32h64c17.7 0 32-14.3 32-32V352h8.7c67.9 0 133 27 181 75l43.6 43.6c9.2 9.2 22.9 11.9 34.9 6.9s19.8-16.6 19.8-29.6V300.4c18.6-8.8 32-32.5 32-60.4s-13.4-51.6-32-60.4V32zm-64 76.7v262.6C357.2 317.8 280.5 288 200.7 288H192v-96h8.7c79.8 0 156.5-29.8 215.3-83.3z"/></svg>');--md-admonition-icon--success:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7l233.4-233.3c12.5-12.5 32.8-12.5 45.3 0z"/></svg>');--md-admonition-icon--question:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 512a256 256 0 1 0 0-512 256 256 0 1 0 0 512zm-86.2-346.7c7.9-22.3 29.1-37.3 52.8-37.3h58.3c34.9 0 63.1 28.3 63.1 63.1 0 22.6-12.1 43.5-31.7 54.8L280 264.4c-.2 13-10.9 23.6-24 23.6-13.3 0-24-10.7-24-24v-13.5c0-8.6 4.6-16.5 12.1-20.8l44.3-25.4c4.7-2.7 7.6-7.7 7.6-13.1 0-8.4-6.8-15.1-15.1-15.1h-58.3c-3.4 0-6.4 2.1-7.5 5.3l-.4 1.2c-4.4 12.5-18.2 19-30.6 14.6s-19-18.2-14.6-30.6l.4-1.2zM224 352a32 32 0 1 1 64 0 32 32 0 1 1-64 0z"/></svg>');--md-admonition-icon--warning:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M256 32c14.2 0 27.3 7.5 34.5 19.8l216 368c7.3 12.4 7.3 27.7.2 40.1S486.3 480 472 480H40c-14.3 0-27.6-7.7-34.7-20.1s-7-27.8.2-40.1l216-368C228.7 39.5 241.8 32 256 32zm0 128c-13.3 0-24 10.7-24 24v112c0 13.3 10.7 24 24 24s24-10.7 24-24V184c0-13.3-10.7-24-24-24zm32 224a32 32 0 1 0-64 0 32 32 0 1 0 64 0z"/></svg>');--md-admonition-icon--failure:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M459.1 52.4 442.6 6.5c-1.9-3.9-6.1-6.5-10.5-6.5s-8.5 2.6-10.4 6.5l-16.5 45.9-46 16.8c-4.3 1.6-7.3 5.9-7.2 10.4 0 4.5 3 8.7 7.2 10.2l45.7 16.8 16.8 45.8c1.5 4.4 5.8 7.5 10.4 7.5s8.9-3.1 10.4-7.5l16.5-45.8 45.7-16.8c4.2-1.5 7.2-5.7 7.2-10.2 0-4.6-3-8.9-7.2-10.4l-45.6-16.8zm-132.4 53c-12.5-12.5-32.8-12.5-45.3 0l-2.9 2.9c-22-8-45.8-12.3-70.5-12.3C93.1 96 0 189.1 0 304s93.1 208 208 208 208-93.1 208-208c0-24.7-4.3-48.5-12.2-70.5l2.9-2.9c12.5-12.5 12.5-32.8 0-45.3l-80-80zM200 192c-57.4 0-104 46.6-104 104v8c0 8.8-7.2 16-16 16s-16-7.2-16-16v-8c0-75.1 60.9-136 136-136h8c8.8 0 16 7.2 16 16s-7.2 16-16 16h-8z"/></svg>');--md-admonition-icon--danger:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M416 398.9c58.5-41.1 96-104.1 96-174.9C512 100.3 397.4 0 256 0S0 100.3 0 224c0 70.7 37.5 133.8 96 174.9V464c0 26.5 21.5 48 48 48h48v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h64v-48c0-8.8 7.2-16 16-16s16 7.2 16 16v48h48c26.5 0 48-21.5 48-48v-65.1zM96 256a64 64 0 1 1 128 0 64 64 0 1 1-128 0zm256-64a64 64 0 1 1 0 128 64 64 0 1 1 0-128z"/></svg>');--md-admonition-icon--bug:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M320 0c17.7 0 32 14.3 32 32v64h120c39.8 0 72 32.2 72 72v272c0 39.8-32.2 72-72 72H168c-39.8 0-72-32.2-72-72V168c0-39.8 32.2-72 72-72h120V32c0-17.7 14.3-32 32-32zM208 384c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zm96 0c-8.8 0-16 7.2-16 16s7.2 16 16 16h32c8.8 0 16-7.2 16-16s-7.2-16-16-16h-32zM264 256a40 40 0 1 0-80 0 40 40 0 1 0 80 0zm152 40a40 40 0 1 0 0-80 40 40 0 1 0 0 80zM48 224h16v192H48c-26.5 0-48-21.5-48-48v-96c0-26.5 21.5-48 48-48zm544 0c26.5 0 48 21.5 48 48v96c0 26.5-21.5 48-48 48h-16V224h16z"/></svg>');--md-admonition-icon--example:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M288 0H128c-17.7 0-32 14.3-32 32s14.3 32 32 32v132.8c0 11.8-3.3 23.5-9.5 33.5L10.3 406.2C3.6 417.2 0 429.7 0 442.6 0 480.9 31.1 512 69.4 512h309.2c38.3 0 69.4-31.1 69.4-69.4 0-12.8-3.6-25.4-10.3-36.4L329.5 230.4c-6.2-10.1-9.5-21.7-9.5-33.5V64c17.7 0 32-14.3 32-32S337.7 0 320 0h-32zm-96 196.8V64h64v132.8c0 23.7 6.6 46.9 19 67.1l34.5 56.1h-171l34.5-56.1c12.4-20.2 19-43.4 19-67.1z"/></svg>');--md-admonition-icon--quote:url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M0 216C0 149.7 53.7 96 120 96h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V216zm256 0c0-66.3 53.7-120 120-120h8c17.7 0 32 14.3 32 32s-14.3 32-32 32h-8c-30.9 0-56 25.1-56 56v8h64c35.3 0 64 28.7 64 64v64c0 35.3-28.7 64-64 64h-64c-35.3 0-64-28.7-64-64V216z"/></svg>');}</style>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+<link href="../../res/extra.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+<link href="../../assets/stylesheets/glightbox.min.css" rel="stylesheet"/><style>
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            
+                .gscrollbar-fixer { padding-right: 15px; }
+                .gdesc-inner { font-size: 0.75rem; }
+                body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color);}
+                body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color);}
+                body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color);}
+                </style><script src="../../assets/javascripts/glightbox.min.js"></script></head>
+<body data-md-color-accent="red" data-md-color-primary="red" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#1">
+          跳转至
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+<nav aria-label="页眉" class="md-header__inner md-grid">
+<a aria-label="Professional course" class="md-header__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Professional course
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              0.整体介绍
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="切换到暗模式" class="md-option" data-md-color-accent="red" data-md-color-media="(prefers-color-scheme)" data-md-color-primary="red" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_3" hidden="" title="切换到暗模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14.3 16-.7-2h-3.2l-.7 2H7.8L11 7h2l3.2 9h-1.9M20 8.69V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69m-9.15 3.96h2.3L12 9l-1.15 3.65Z"></path></svg>
+</label>
+<input aria-label="切换到默认模式" class="md-option" data-md-color-accent="green" data-md-color-media="(prefers-color-scheme: light)" data-md-color-primary="green" data-md-color-scheme="default" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="切换到默认模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a4 4 0 0 0-4 4 4 4 0 0 0 4 4 4 4 0 0 0 4-4 4 4 0 0 0-4-4m0 10a6 6 0 0 1-6-6 6 6 0 0 1 6-6 6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+<input aria-label="切换到亮模式" class="md-option" data-md-color-accent="blue" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-primary="blue" data-md-color-scheme="slate" id="__palette_3" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="切换到亮模式">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 18c-.89 0-1.74-.2-2.5-.55C11.56 16.5 13 14.42 13 12c0-2.42-1.44-4.5-3.5-5.45C10.26 6.2 11.11 6 12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6m8-9.31V4h-4.69L12 .69 8.69 4H4v4.69L.69 12 4 15.31V20h4.69L12 23.31 15.31 20H20v-4.69L23.31 12 20 8.69Z"></path></svg>
+</label>
+</form>
+<div class="md-header__option">
+<div class="md-select">
+<button aria-label="选择当前语言" class="md-header__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m12.87 15.07-2.54-2.51.03-.03A17.52 17.52 0 0 0 14.07 6H17V4h-7V2H8v2H1v2h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04M18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12m-2.62 7 1.62-4.33L19.12 17h-3.24Z"></path></svg>
+</button>
+<div class="md-select__inner">
+<ul class="md-select__list">
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-organization-and-architecture-tutorial" hreflang="en">
+                    计算机组成原理
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://www.javatpoint.com/computer-network-tutorial" hreflang="zh">
+                    计算机网络
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/" hreflang="en">
+                    vue.js官网
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://play.vuejs.org/#eNo9jcEKwjAMhl/lt5fpQYfXUQfefAMvvRQbddC1pUuHUPrudg4HIcmXjyRZXEM4zYlEJ+T0iEPgXjn6BB8Zhp46WUZWDjCa9f6w9kAkTtH9CRinV4fmRtZ63H20Ztesqiylphqy3R5UYBqD1UyVAPk+9zkvV1CKbCv9poMLiTEfR2/IXpSoXomqZLtti/IFwVtA9A==" hreflang="zh">
+                    vue.js游乐场
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://vuejs.org/guide/quick-start.html#try-vue-online" hreflang="zh">
+                    vue.js官方教程
+                  </a>
+</li>
+<li class="md-select__item">
+<a class="md-select__link" href="https://cn.vuejs.org/tutorial/#step-1" hreflang="zh">
+                    vue.js官方中文教程
+                  </a>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="搜索" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="搜索" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="查找" class="md-search__options">
+<a aria-label="分享" class="md-search__icon md-icon" data-clipboard="" data-clipboard-text="" data-md-component="search-share" href="javascript:void(0)" tabindex="-1" title="分享">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"></path></svg>
+</a>
+<button aria-label="清空当前内容" class="md-search__icon md-icon" tabindex="-1" title="清空当前内容" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+</nav>
+<nav aria-label="标签" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../computer%20organization%26architecture/1.COA%E6%A6%82%E8%BF%B0/">
+        计算机组成原理
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../computer%20network/1.%E6%A6%82%E8%BF%B0/">
+        计算机网络
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        操作系统
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        数据结构
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        刻意练习
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="./">
+        工程
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="导航栏" class="md-nav md-nav--primary md-nav--lifted" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Professional course" class="md-nav__button md-logo" data-md-component="logo" href="/" title="Professional course">
+<img alt="logo" src="https://static.javatpoint.com/tutorial/coa/images/coa-tutorial.png"/>
+</a>
+    Professional course
+  </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          计算机组成原理
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          计算机组成原理
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/1.COA%E6%A6%82%E8%BF%B0/">
+        1.COA概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/2.Basic%20CO%26%26Design/">
+        2.Basic CO&amp;&amp;Design
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/3.Computer%20Instructions/">
+        3.Computer Instructions
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/4.Digital%20Logic%20Circuits/">
+        4.Digital Logic Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/5.Combinational%20Circuits/">
+        5.Combinational Circuits
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/6.Flip%20-%20Flops/">
+        6.Flip   Flops
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/7.Digital%20Components/">
+        7.Digital Components
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/8.Register%20Transfer%20language/">
+        8.Register Transfer language
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/9.Micro-Operations/">
+        9.Micro Operations
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/10.Memory%20Organization/">
+        10.Memory Organization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/11.Pipeline/">
+        11.Pipeline
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20organization%26architecture/Misc/">
+        Misc
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          计算机网络
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          计算机网络
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/2.Models/">
+        2.Models
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/3.Physical%20Layer/">
+        3.Physical Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/4.Data%20Link%20layer/">
+        4.Data Link layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/5.Network%20Layer/">
+        5.Network Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/6.Routing%20Algorithm/">
+        6.Routing Algorithm
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/7.Transport%20Layer/">
+        7.Transport Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/8.Application%20Layer/">
+        8.Application Layer
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/9.Application%20Protocols/">
+        9.Application Protocols
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/10.Network%20Security/">
+        10.Network Security
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../computer%20network/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          操作系统
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          操作系统
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/2.Process%20Management/">
+        2.Process Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/3.Synchronization/">
+        3.Synchronization
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/4.Deadlocks/">
+        4.Deadlocks
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/5.Memory%20Management/">
+        5.Memory Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/6.File%20Management/">
+        6.File Management
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../operating%20system/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          数据结构
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          数据结构
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/2.Array/">
+        2.Array
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/3.Linked%20List/">
+        3.Linked List
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/4.Stack/">
+        4.Stack
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/5.Queue/">
+        5.Queue
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/6.Tree/">
+        6.Tree
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/7.Graph/">
+        7.Graph
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/8.Searching/">
+        8.Searching
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/9.Sorting/">
+        9.Sorting
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/10.Differences/">
+        10.Differences
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../data%20structure/Misc%26MCQ/">
+        Misc&amp;MCQ
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          刻意练习
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          刻意练习
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/0.%E5%BA%8F/">
+        0.序
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/1.%E6%9C%89%E7%9B%AE%E7%9A%84%E7%9A%84%E7%BB%83%E4%B9%A0/">
+        1.有目的的练习
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/2.%E5%A4%A7%E8%84%91%E7%9A%84%E9%80%82%E5%BA%94%E8%83%BD%E5%8A%9B/">
+        2.大脑的适应能力
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/3.%E5%BF%83%E9%87%8C%E8%A1%A8%E5%BE%81/">
+        3.心里表征
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/4.%E9%BB%84%E9%87%91%E6%A0%87%E5%87%86/">
+        4.黄金标准
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/5.%E5%9C%A8%E5%B7%A5%E4%BD%9C%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        5.在工作中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/6.%E5%9C%A8%E7%94%9F%E6%B4%BB%E4%B8%AD%E8%BF%90%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%8E%9F%E5%88%99/">
+        6.在生活中运用刻意练习原则
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/7.%E6%88%90%E4%B8%BA%E6%9D%B0%E5%87%BA%E4%BA%BA%E7%89%A9%E7%9A%84%E8%B7%AF%E7%BA%BF%E5%9B%BE/">
+        7.成为杰出人物的路线图
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/8.%E6%80%8E%E6%A0%B7%E8%A7%A3%E9%87%8A%E5%A4%A9%E7%94%9F%E6%89%8D%E5%8D%8E/">
+        8.怎样解释天生才华
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/9.%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%88%9B%E9%80%A0%E5%85%A8%E6%96%B0%E4%B8%96%E7%95%8C/">
+        9.用刻意练习创造全新世界
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_6" type="checkbox"/>
+<label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          工程
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_6_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_6">
+<span class="md-nav__icon md-icon"></span>
+          工程
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          0.整体介绍
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        0.整体介绍
+      </a>
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.声明式渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2attribute">
+    2.Attribute 绑定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.事件侦听
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.表单绑定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.条件渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.列表渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.计算属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.生命周期 &amp; 模板引用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.侦听器
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10.组件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11props">
+    11.props
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12emits">
+    12.emits
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13slot">
+    13.slot(插槽)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    总结
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../1.%E6%A6%82%E8%BF%B0/">
+        1.概述
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../2.%E6%95%B0%E6%8D%AE%E7%BB%91%E5%AE%9A/">
+        2.数据绑定
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../3.%E8%BF%87%E6%B8%A1%26%E5%8A%A8%E7%94%BB/">
+        3.过渡&amp;动画
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../data%20warehouse/">
+        Data warehouse
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../sql/">
+        Sql
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../software%20engineering/">
+        Software engineering
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../github/">
+        Github
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="目录" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#1">
+    1.声明式渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#2attribute">
+    2.Attribute 绑定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#3">
+    3.事件侦听
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#4">
+    4.表单绑定
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#5">
+    5.条件渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#6">
+    6.列表渲染
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#7">
+    7.计算属性
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#8">
+    8.生命周期 &amp; 模板引用
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#9">
+    9.侦听器
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#10">
+    10.组件
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#11props">
+    11.props
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#12emits">
+    12.emits
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#13slot">
+    13.slot(插槽)
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#_1">
+    总结
+  </a>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1>0.整体介绍</h1>
+<h3 id="1">1.声明式渲染</h3>
+<p>单文件组件(Single-File Component, SFC)</p>
+<p>Vue 的核心功能是<strong>声明式渲染</strong>：通过扩展于标准 HTML 的模板语法，我们可以根据 JavaScript 的状态来描述 HTML 应该是什么样子的。当状态改变时，HTML 会自动更新（即 响应式）</p>
+<div class="highlight"><span class="filename">App.vue</span><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>&lt;script&gt;
+<a href="#__codelineno-0-2" id="__codelineno-0-2" name="__codelineno-0-2"></a>export default {
+<a href="#__codelineno-0-3" id="__codelineno-0-3" name="__codelineno-0-3"></a>  // 组件选项
+<a href="#__codelineno-0-4" id="__codelineno-0-4" name="__codelineno-0-4"></a>  // 此处声明一些响应式状态，比如：
+<a href="#__codelineno-0-5" id="__codelineno-0-5" name="__codelineno-0-5"></a>    data(){
+<a href="#__codelineno-0-6" id="__codelineno-0-6" name="__codelineno-0-6"></a>        return { msg: 'hello world!' }
+<a href="#__codelineno-0-7" id="__codelineno-0-7" name="__codelineno-0-7"></a>    }
+<a href="#__codelineno-0-8" id="__codelineno-0-8" name="__codelineno-0-8"></a>
+<a href="#__codelineno-0-9" id="__codelineno-0-9" name="__codelineno-0-9"></a>}
+<a href="#__codelineno-0-10" id="__codelineno-0-10" name="__codelineno-0-10"></a>&lt;/script&gt;
+<a href="#__codelineno-0-11" id="__codelineno-0-11" name="__codelineno-0-11"></a>
+<a href="#__codelineno-0-12" id="__codelineno-0-12" name="__codelineno-0-12"></a>&lt;template&gt;
+<a href="#__codelineno-0-13" id="__codelineno-0-13" name="__codelineno-0-13"></a>  // 这里可以以 {{ ... }}  的形式引用（甚至可以使用 js 函数等等），如：
+<a href="#__codelineno-0-14" id="__codelineno-0-14" name="__codelineno-0-14"></a>    &lt;p&gt; {{ msg }} &lt;/p&gt;
+<a href="#__codelineno-0-15" id="__codelineno-0-15" name="__codelineno-0-15"></a>&lt;/template&gt;
+</code></pre></div>
+<p>上述 <code>data()</code> 函数返回一个 map 对象</p>
+<h3 id="2attribute">2.Attribute 绑定</h3>
+<p>在 Vue 中，mustache 语法 (即双大括号) 只能用于 <strong>文本插值</strong>，为了给 attribute 绑定一个动态值，需要使用 <mark class="critic"><code>v-bind</code></mark> 指令：</p>
+<p><code>&lt;div <mark class="critic">v-bind:id="dynamicId"</mark>&gt;&lt;/div&gt;</code> <span class="arithmatex">\(\iff\)</span> <code>&lt;div <mark class="critic">:id="dynamicId"</mark>&gt;&lt;/div&gt;</code> </p>
+<p>（<code>v-bind</code> 是常用的指令，由于其常用性，所以<code>v-bind</code>可以省略；冒号<code>:</code> 后的 <code>id</code> 是该指令的参数，类似于 html 标签的属性名；等式 <code>=</code> 右边的部分对应 <code>data()</code> 函数返回的对象的 key 指定的值）</p>
+<p>下图为 <code>v-bind</code> 实现的功能，即将 <code>export default</code> 内的某个变量 <code>variable</code> 绑定到某个标签属性 <code>attribute</code></p>
+<pre class="mermaid"><code>graph LR
+a[variable] --&gt;|v-bind| b[attribute]</code></pre>
+<p>其中变量改变会导致属性改变，但属性改变不会导致变量改变 </p>
+<h3 id="3">3.事件侦听</h3>
+<p><mark class="critic"><code>v-on</code></mark> 是用于 DOM 事件侦听的指令，可以简写为 <code>@</code>，例如：</p>
+<p><code>&lt;button <mark class="critic">v-on:click="add"</mark>&gt;{{ count }}&lt;/button&gt;</code> <span class="arithmatex">\(\iff\)</span> <code>&lt;button <mark class="critic">@click="add"</mark>&gt;{{ count }}&lt;/button&gt;</code></p>
+<p>此代码在点击(<code>click</code>) <code>button</code> 标签后，会触发该标签的 <code>click</code> 事件，然后回调指定的函数 <code>add()</code>（该函数在<code>&lt;script&gt;</code> 标签中 <code>export default</code> 后面的对象中 key=<code>methods</code> 对象所指定的函数集合中）</p>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<ul>
+<li><code>&lt;script&gt;</code> 标签中 <code>export default</code> 后面紧跟一个对象，该对象可以放 键值对，也可以放 函数？</li>
+</ul>
+</div>
+<p>下图为 <code>v-on</code> 实现的功能，即将 html <strong>事件</strong>属性 <code>attribute</code> 绑定到(或 关联到) 某个事件 <code>event</code>，该事件又会绑定到某个事件处理函数 <code>solve(e)</code> （e 是原生的 DOM 事件）；此时 <code>solve(e)</code> 可以选择性地改变 <code>export default</code> 域中的变量 <code>variable</code> （最终可以实现 <code>attribute</code> 和 <code>variable</code> 的双向关联）</p>
+<pre class="mermaid"><code>graph LR
+a[attribute] --&gt;|v-on| b[event]
+b --&gt; c["solve(e)"]
+c --&gt; d[variable]</code></pre>
+<h3 id="4">4.表单绑定</h3>
+<p><mark class="critic"><code>v-model</code></mark> 指令为 <code>input</code> 或 多选框、单选框、下拉框等输入标签简化了 <code>export default</code> 域中的变量 <code>variable</code> 与这些标签的 <code>value</code> 属性之间的 <strong>双向关联</strong> 所需要做的步骤（如：<code>v-bind</code> 指令，<code>v-on</code> 指令 以及自定义事件处理函数的组合 能实现相同功能）</p>
+<p>示例：</p>
+<p><code>&lt;input v-model="text"&gt;</code> <span class="arithmatex">\(\iff\)</span> <code>&lt;input :value="text" @input="onInput"&gt;</code> + 
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>methods: {
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>  onInput(e) {
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>    this.text = e.target.value
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>  }
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>}
+</code></pre></div></p>
+<h3 id="5">5.条件渲染</h3>
+<p><code>v-if</code> 指令指定标签是否渲染标签 或 元素，若该指令返回<code>falsy</code>，那么将会渲染 <code>v-else</code> 指定的标签（如果存在）</p>
+<p>示例：</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a>&lt;h1 v-if="awesome"&gt;Vue is awesome!&lt;/h1&gt;
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a>&lt;h1 v-else&gt;Oh no 😢&lt;/h1&gt;
+</code></pre></div>
+<h3 id="6">6.列表渲染</h3>
+<p><code>v-for</code> 指令可以迭代 <code>variable</code>（通常是对象 或 数组），通常用于列表标签 <code>ol</code> 或 <code>li</code> </p>
+<p>有两个参数：迭代器 <code>iterater</code> 和 <code>variable</code>；其中迭代器可以在 vue 指令的内部使用 或 用于申明式渲染 <code>{{}}</code> 内，而且 迭代器 <code>iterator</code> 是一个局部变量</p>
+<p>示例： </p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>&lt;li v-for="x in arr" :key="x.id"&gt;
+<a href="#__codelineno-3-2" id="__codelineno-3-2" name="__codelineno-3-2"></a>    {{ x.text }}
+<a href="#__codelineno-3-3" id="__codelineno-3-3" name="__codelineno-3-3"></a>&lt;/li&gt;
+</code></pre></div>
+<div class="admonition 应用">
+<p class="admonition-title">应用</p>
+<ul>
+<li>展示数组的所有元素，提交表单可以添加列表，点击某个列表还能精确删除某个列表 <a href="https://cn.vuejs.org/tutorial/#step-7">参考</a></li>
+</ul>
+</div>
+<h3 id="7">7.计算属性</h3>
+<p>计算属性是 <code>export default</code> 中的“对象”（类似于<code>data()</code> 和 <code>methods</code>），该对象为 <mark class="critic"><code>computed</code></mark>；<code>computed</code> 内包含实则为函数列表，每个函数都可以返回一个对象，进而使得对象被 vue 的 <code>v-for</code> 作为逻辑上的 数组 或 对象 进行访问</p>
+<p><code>data()</code> 内的数据 和 <code>computed</code> 内的数据的实质区别是：前者当前保存在内存中的静态数据，而后者是逻辑上的动态数据（即 <code>computed</code> 通过当前的静态数据的组合来 构造 或 计算 动态数据）</p>
+<h3 id="8">8.生命周期 &amp; 模板引用</h3>
+<p><strong>生命周期钩子</strong> 允许我们在组件的特定生命周期调用回调函数，如<code>mounted()</code>，<code>created()</code>，<code>updated()</code>，这些函数为 <code>export default</code> 的元素之一</p>
+<p>在这些函数内可以通过 <code>this.$refs</code> 访问所有被 <code>ref</code> 属性指定的标签（但这些标签不仅限于在这些函数内部可以访问）</p>
+<h3 id="9">9.侦听器</h3>
+<p><code>watch</code> 用于侦听 <code>data()</code> 内每个变量变化，并提供该变量变化的处理函数（回调）</p>
+<p><code>watch</code> 是 <code>export default</code> 中的对象，其中每个元素都是以 <code>data()</code> 中某个变量作为函数名，仅有一个参数的函数，该参数是该变量变化之后的状态值（但是原来的状态值不能被调用？）</p>
+<h3 id="10">10.组件</h3>
+<p><code>components</code> 是 vue 用于注册子组件的关键字，同样也位于 <code>export default</code> 中</p>
+<p>导入并注册后的组件，就能之间在 <code>&lt;template&gt;</code> 中调用了</p>
+<div class="admonition note">
+<p class="admonition-title">step</p>
+<ol>
+<li>导入子组件：如，<code>import ChildComp from './ChildComp.vue'</code></li>
+<li>注册子组件：<code>components:{ ChildComp }</code></li>
+<li>调用子组件：<code>&lt;ChildComp /&gt;</code></li>
+</ol>
+</div>
+<h3 id="11props">11.props</h3>
+<p><mark class="critic"><code>props</code></mark> 用于为子组件预定义某些参数，在<code>export default</code>中声明；组件调用子组件时，可以选择性地向子组件传递 参数 或 属性，已以产生父子组件的交互</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>子组件本身就是用来被调用的，其功能类似于函数，因此子组件也拥有参数</li>
+<li>调用当前组件（子组件）的组件同样需要用 导入，注册 和 调用 当前组件</li>
+<li>可以实现 父组件 到 子组件 的单向数据传递</li>
+</ul>
+</div>
+<h3 id="12emits">12.emits</h3>
+<p>子组件通过 <mark class="critic"><code>emits</code></mark> 向父组件注册事件，<code>emits</code> 指定了一个字符串数组，每个字符串对应一个事件</p>
+<p>子组件进而能使用 <code>this.$emit(事件名, 事件对象)</code> 将已经通过 <code>emits</code> 注册过的事件传递给父组件</p>
+<p>那么父组件可以侦听该子组件(不能是其他组件，如原生html标签) 注册 并 发送 的事件 并 使用相应的事件处理函数来处理事件</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul>
+<li>实质上是 子组件 到 父组件 的单向数据传递</li>
+</ul>
+</div>
+<h3 id="13slot">13.slot(插槽)</h3>
+<p><code>slot</code> 是一个标签，在子标签的 <code>template</code> 元素(标签)的任意位置放置 <code>slot</code> 元素，那么父组件在调用该组件时通过 <code>&lt;ChildComp&gt;<mark class="critic">content</mark>&lt;/ChildComp&gt;</code> 标签中间传递内容，就会将该内容替换为子组件中</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul>
+<li>子组件中 <code>&lt;slot&gt;</code> 有两种使用方式：</li>
+<li><code>&lt;slot /&gt;</code>：不提供默认值（父组件不传递内容时，会显示默认值）</li>
+<li><code>&lt;slot&gt; content &lt;/slot&gt;</code>：提供默认值</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">父组件 与 子组件 之间的数据传递：</p>
+</div>
+<pre class="mermaid"><code>graph LR
+a[父组件]
+b[子组件]
+
+b --&gt;|"import + components"| a
+a --&gt;|props| b
+b --&gt;|"emits + this.$emit(-,-)"| a
+a --&gt;|slot| b</code></pre>
+<h3 id="_1">总结</h3>
+<ul>
+<li><code>&lt;script&gt;</code> 内的 <code>export default{ ... }</code> 用于放 <code>vue</code> 组件，以逗号间隔</li>
+<li>vue 的部分代码在 <code>&lt;template&gt;</code> 标签中</li>
+<li>声明式渲染：<code>{{ ... }}</code></li>
+<li><code>this</code>：用于调用 <code>vue</code> 的变量，如：<code>$refs</code></li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">常见组件</p>
+<ul>
+<li><code>data(){ return { ... } }</code>：预执行的语句，返回一个 <code>map</code></li>
+<li><code>methods:{ ... }</code>：存放函数列表，以逗号分隔</li>
+<li><code>computed:{ ... }</code>：存放又返回值的函数列表，以逗号分隔</li>
+<li>生命周期钩子：<code>mounted()</code>, <code>created()</code>, <code>updated()</code> 均为既是函数又是组件，在某个生命周期中回调</li>
+<li><code>watch:{ ... }</code>：用于存放一些回调函数；这些函数以某个变量的变量名作为函数名，仅当该变量改变时，会回调这些函数</li>
+<li><code>components:{ ... }</code>：注册子模块的列表，在此之前需要导入子模块，如：<code>import ChildComp from './ChildComp.vue'</code></li>
+<li><code>props:{ ... }</code>：存放当前模块被调用时的参数/属性列表，每一项形如 <code>&lt;key&gt;: &lt;type&gt;</code> ，即需要声明每个参数的 参数名 和 类型；在父模块调用时其数据以参数的形式单向传递给当前模块</li>
+<li><code>emits:[ ... ]</code>：存放一个字符串列表，每个字符串代表一个事件名，即子模块被调用之前注册的事件，某个事件可以通过 <code>$emit(&lt;name&gt;, &lt;obj&gt;)</code> 来触发该事件并携带一个事件对象，相应地，父模块调用也需要通过 <code>@response=&lt;事件处理函数&gt;</code> 侦听子模块的所有事件并相应这些事件；实质是子模块到父模块的单向数据传递</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">常见指令</p>
+<ul>
+<li>指令类似于 <code>html</code> 属性，形如 <code>v-XXX[: ...]= ...</code>，右侧可以调用 某些组件的内容</li>
+<li><code>v-bind:&lt;name&gt;=&lt;val&gt;</code>：为标签添加属性键值对，与组件 <code>data()</code> 混用；可简写为 <code>:&lt;name&gt;=&lt;val&gt;</code>：实现 <code>val</code> 对该属性的单向绑定</li>
+<li><code>v-on:&lt;name&gt;=&lt;func&gt;</code>：为标签添加事件，与组件 <code>methods</code> 混用；可简写为 <code>@&lt;name&gt;=&lt;func&gt;</code></li>
+<li><code>v-model=&lt;val&gt;</code>：实现 <code>data()</code> 中的变量与 文本框、多选框、单选框、下拉框等标签的 <code>value</code> 属性的 <strong>双向绑定</strong></li>
+<li><code>v-if=&lt;bool&gt;</code>：根据 <code>bool</code> 的取值选择性渲染当前标签</li>
+<li><code>v-else</code>：若 <code>v-if</code> 结果为 <code>false</code>，则渲染当前标签</li>
+<li><code>v-for="&lt;x&gt; in &lt;arr&gt;"</code>：迭代数组 <code>arr</code>，<code>x</code> 为数组中的值；通常与声明式渲染 <code>{{ ... }}</code> 混用；<code>arr</code> 可以是 <code>data()</code> 或 <code>computed</code> 组件中的 静态数据 或 动态数据</li>
+<li><code>ref=&lt;val&gt;</code>：声明对标签的引用，可以通过 <code>this.$refs.&lt;val&gt;</code> 访问当前标签</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">常见标签</p>
+<ul>
+<li><code>&lt;template&gt;</code>：存放 <code>vue</code> 模块的标签类的代码</li>
+<li><code>&lt;子模块名 /&gt;</code>：调用子模块，在此之前要用 <code>import</code> 导入，并用 <code>components</code> 组件注册</li>
+<li><code>&lt;slot&gt;</code>：子模块中放置该标签，父模块调用该模块时，会将调用子模块的标签的内容替换<code>&lt;slot&gt;</code>的位置和内容</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">常见变量/函数</p>
+<ul>
+<li><code>$refs</code>：声明过引用的标签 <code>map</code></li>
+<li><code>$emit(&lt;name&gt;, &lt;obj&gt;)：</code></li>
+</ul>
+</div>
+</article>
+</div>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            回到页面顶部
+          </button>
+</main>
+<footer class="md-footer">
+<nav aria-label="页脚" class="md-footer__inner md-grid">
+<a aria-label="上一页: 9.用刻意练习创造全新世界" class="md-footer__link md-footer__link--prev" href="../../%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0/9.%E7%94%A8%E5%88%BB%E6%84%8F%E7%BB%83%E4%B9%A0%E5%88%9B%E9%80%A0%E5%85%A8%E6%96%B0%E4%B8%96%E7%95%8C/" rel="prev">
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</div>
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                上一页
+              </span>
+<div class="md-ellipsis">
+                9.用刻意练习创造全新世界
+              </div>
+</div>
+</a>
+<a aria-label="下一页: 1.概述" class="md-footer__link md-footer__link--next" href="../1.%E6%A6%82%E8%BF%B0/" rel="next">
+<div class="md-footer__title">
+<span class="md-footer__direction">
+                下一页
+              </span>
+<div class="md-ellipsis">
+                1.概述
+              </div>
+</div>
+<div class="md-footer__button md-icon">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"></path></svg>
+</div>
+</a>
+</nav>
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+<div class="md-copyright__highlight">
+      Copyright © 2022 - 2023 travis
+    </div>
+</div>
+<div class="md-social">
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</a>
+<a class="md-social__link" href="链接url地址" rel="noopener" target="_blank" title="标识名">
+<svg viewbox="0 0 640 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M349.9 236.3h-66.1v-59.4h66.1v59.4zm0-204.3h-66.1v60.7h66.1V32zm78.2 144.8H362v59.4h66.1v-59.4zm-156.3-72.1h-66.1v60.1h66.1v-60.1zm78.1 0h-66.1v60.1h66.1v-60.1zm276.8 100c-14.4-9.7-47.6-13.2-73.1-8.4-3.3-24-16.7-44.9-41.1-63.7l-14-9.3-9.3 14c-18.4 27.8-23.4 73.6-3.7 103.8-8.7 4.7-25.8 11.1-48.4 10.7H2.4c-8.7 50.8 5.8 116.8 44 162.1 37.1 43.9 92.7 66.2 165.4 66.2 157.4 0 273.9-72.5 328.4-204.2 21.4.4 67.6.1 91.3-45.2 1.5-2.5 6.6-13.2 8.5-17.1l-13.3-8.9zm-511.1-27.9h-66v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm78.1 0h-66.1v59.4h66.1v-59.4zm-78.1-72.1h-66.1v60.1h66.1v-60.1z"></path></svg>
+</a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": ["navigation.instant", "navigation.tracking", "navigation.tabs", "navigation.tabs.sticky", "navigation.sections", "navigation.prune", "navigation.indexes", "toc.follow", "navigation.top", "search.suggest", "search.highlight", "search.share", "header.autohide", "navigation.footer", "content.action.edit", "content.action.view", "content.code.copy", "content.code.annotate", "content.tooltips"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+<script src="../../assets/javascripts/bundle.51198bba.min.js"></script>
+<script src="../../res/extra.js"></script>
+<script src="https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js"></script>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<script>document$.subscribe(() => {const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});})</script></body>
+</html>
